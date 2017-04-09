@@ -23,646 +23,1538 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1064,         20]
-NotebookDataLength[     27460,        677]
-NotebookOptionsPosition[     27545,        663]
-NotebookOutlinePosition[     27918,        679]
-CellTagsIndexPosition[     27875,        676]
+NotebookDataLength[     65952,       1577]
+NotebookOptionsPosition[     65789,       1554]
+NotebookOutlinePosition[     66189,       1571]
+CellTagsIndexPosition[     66146,       1568]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[{
- RowBox[{"On", "[", "Assert", "]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"inverseModulo", "[", 
-    RowBox[{"n0_", ",", "p0_"}], "]"}], ":=", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"q", ",", 
-       RowBox[{"spair", "=", 
-        RowBox[{"{", 
-         RowBox[{"0", ",", "0"}], "}"}]}], ",", 
-       RowBox[{"tpair", "=", 
-        RowBox[{"{", 
-         RowBox[{"0", ",", "0"}], "}"}]}], ",", 
-       RowBox[{"rpair", "=", 
-        RowBox[{"{", 
-         RowBox[{"0", ",", "0"}], "}"}]}], ",", "ans", ",", 
-       RowBox[{"n", "=", "n0"}], ",", 
-       RowBox[{"p", "=", "p0"}]}], "}"}], ",", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"Assert", "[", 
-       RowBox[{"n", "\[NotEqual]", "0"}], "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{"n", "<", "0"}], ",", 
-        RowBox[{"ans", "=", 
-         RowBox[{"p", "-", 
-          RowBox[{"inverseModulo", "[", 
-           RowBox[{
-            RowBox[{"-", "n"}], ",", "p"}], "]"}]}]}]}], "]"}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"rpair", "=", 
-       RowBox[{"{", 
-        RowBox[{"p", ",", "n"}], "}"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"spair", "=", 
-       RowBox[{"{", 
-        RowBox[{"0", ",", "1"}], "}"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"tpair", "=", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "0"}], "}"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"While", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{
-         "rpair", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
-         "\[NotEqual]", "0"}], ",", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"q", "=", 
-          RowBox[{"Floor", "[", 
-           RowBox[{
-            RowBox[{
-            "rpair", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
-            "/", 
-            RowBox[{
-            "rpair", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}],
-            "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"rpair", "=", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-             "rpair", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
-             "-", 
-             RowBox[{"q", "*", 
-              RowBox[{
-              "rpair", "\[LeftDoubleBracket]", "1", 
-               "\[RightDoubleBracket]"}]}]}], ",", 
-            RowBox[{
-            "rpair", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}],
-            "}"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"spair", "=", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-             "spair", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
-             "-", 
-             RowBox[{"q", "*", 
-              RowBox[{
-              "spair", "\[LeftDoubleBracket]", "1", 
-               "\[RightDoubleBracket]"}]}]}], ",", 
-            RowBox[{
-            "spair", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}],
-            "}"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"tpair", "=", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-             "tpair", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
-             "-", 
-             RowBox[{"q", "*", 
-              RowBox[{
-              "tpair", "\[LeftDoubleBracket]", "1", 
-               "\[RightDoubleBracket]"}]}]}], ",", 
-            RowBox[{
-            "tpair", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}],
-            "}"}]}]}]}], "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Assert", "[", 
-       RowBox[{
-        RowBox[{
-        "rpair", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], "==",
-         "1"}], "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Assert", "[", 
-       RowBox[{
-        RowBox[{"Mod", "[", 
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{"n", "*", 
-            RowBox[{
-            "spair", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}],
-            ")"}], ",", "p"}], "]"}], "==", "1"}], "]"}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"Mod", "[", 
-       RowBox[{
-        RowBox[{
-        "spair", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], ",", 
-        "p"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";", 
-  RowBox[{
-   RowBox[{"eccAdd", "[", 
-    RowBox[{"p1_", ",", "p2_", ",", "a_", ",", "b_", ",", "order_"}], "]"}], ":=", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-      "x1", ",", "x2", ",", "x3", ",", "y1", ",", "y2", ",", "y3", ",", "m"}],
-       "}"}], ",", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"x1", ",", "y1"}], "}"}], "=", "p1"}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"x2", ",", "y2"}], "}"}], "=", "p2"}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{"x1", "\[Equal]", "\[Infinity]"}], ",", 
-        RowBox[{"Return", "[", "p2", "]"}]}], "]"}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{"x2", "\[Equal]", "\[Infinity]"}], ",", 
-        RowBox[{"Return", "[", "p1", "]"}]}], "]"}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"x1", "\[Equal]", "x2"}], "&&", 
-         RowBox[{
-          RowBox[{"Mod", "[", 
-           RowBox[{
-            RowBox[{"y1", "+", "y2"}], ",", "order"}], "]"}], "\[Equal]", 
-          "0"}]}], ",", 
-        RowBox[{"Return", "[", 
-         RowBox[{"{", 
-          RowBox[{"\[Infinity]", ",", "\[Infinity]"}], "}"}], "]"}]}], "]"}], 
-      ";", "\[IndentingNewLine]", 
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{"p1", "\[Equal]", "p2"}], ",", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"If", "[", 
-          RowBox[{
-           RowBox[{"y1", "\[Equal]", "0"}], ",", 
-           RowBox[{"Return", "[", 
-            RowBox[{"{", 
-             RowBox[{"0", ",", "0"}], "}"}], "]"}]}], "]"}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"m", "=", 
-          RowBox[{"Mod", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{"3", 
-                SuperscriptBox["x1", "2"]}], "+", "a"}], ")"}], "*", 
-             RowBox[{"inverseModulo", "[", 
-              RowBox[{
-               RowBox[{"2", "y1"}], ",", "order"}], "]"}]}], ",", "order"}], 
-           "]"}]}]}], "\[IndentingNewLine]", ",", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"m", "=", 
-          RowBox[{"Mod", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{"y2", "-", "y1"}], ")"}], "*", 
-             RowBox[{"inverseModulo", "[", 
-              RowBox[{
-               RowBox[{"x2", "-", "x1"}], ",", "order"}], "]"}]}], ",", 
-            "order"}], "]"}]}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"x3", "=", 
-       RowBox[{"Mod", "[", 
-        RowBox[{
-         RowBox[{
-          SuperscriptBox["m", "2"], "-", "x1", "-", "x2"}], ",", "order"}], 
-        "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"y3", "=", 
-       RowBox[{"Mod", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"m", 
-           RowBox[{"(", 
-            RowBox[{"x1", "-", "x3"}], ")"}]}], "-", "y1"}], ",", "order"}], 
-        "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"{", 
-       RowBox[{"x3", ",", "y3"}], "}"}]}]}], "\[IndentingNewLine]", "]"}]}], 
-  ";", 
-  RowBox[{
-   RowBox[{"eccMult", "[", 
-    RowBox[{"k_", ",", "P_", ",", "a_", ",", "b_", ",", "order_"}], "]"}], ":=", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"xlist", "=", 
-        RowBox[{"{", "}"}]}], ",", "x1", ",", "x2", ",", 
-       RowBox[{"ktmp", "=", "k"}], ",", 
-       RowBox[{"power", "=", "0"}], ",", 
-       RowBox[{"Q", "=", 
-        RowBox[{"{", 
-         RowBox[{"\[Infinity]", ",", "\[Infinity]"}], "}"}]}], ",", 
-       RowBox[{"Ptmp", "=", "P"}], ",", 
-       RowBox[{"adstring", "=", "\"\<\>\""}]}], "}"}], ",", 
-     "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"x1", ",", "x2"}], "}"}], "=", "P"}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"While", "[", 
-       RowBox[{
-        RowBox[{"ktmp", ">", "0"}], ",", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"If", "[", 
-          RowBox[{
-           RowBox[{"OddQ", "[", "ktmp", "]"}], ",", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"xlist", "=", 
-             RowBox[{"Append", "[", 
-              RowBox[{"xlist", ",", 
-               RowBox[{
-                SuperscriptBox["\"\<2\>\"", "power"], "\"\<P\>\""}]}], 
-              "]"}]}], ";", "\[IndentingNewLine]", 
-            RowBox[{"Q", "=", 
-             RowBox[{"eccAdd", "[", 
-              RowBox[{"Q", ",", "Ptmp", ",", "a", ",", "b", ",", "order"}], 
-              "]"}]}], ";", "\[IndentingNewLine]", 
-            RowBox[{"adstring", "=", 
-             RowBox[{"adstring", "<>", "\"\<A\>\""}]}]}]}], "]"}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"power", "+=", "1"}], ";", "\[IndentingNewLine]", 
-         RowBox[{"If", "[", 
-          RowBox[{
-           RowBox[{"ktmp", ">", "1"}], ",", 
-           RowBox[{
-            RowBox[{"Ptmp", "=", 
-             RowBox[{"eccAdd", "[", 
-              RowBox[{"Ptmp", ",", "Ptmp", ",", "a", ",", "b", ",", "order"}],
-               "]"}]}], ";", "\[IndentingNewLine]", 
-            RowBox[{"adstring", "=", 
-             RowBox[{"adstring", "<>", "\"\<D\>\""}]}]}]}], "]"}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"ktmp", "=", 
-          RowBox[{"Floor", "[", 
-           RowBox[{"ktmp", "/", "2"}], "]"}]}]}]}], "]"}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"{", 
-       RowBox[{"xlist", ",", "adstring", ",", "Q"}], "}"}]}]}], 
-    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}], "Input",
- CellChangeTimes->{{3.7002747478431816`*^9, 3.7002747579902234`*^9}, {
-   3.700275189904924*^9, 3.7002755094691496`*^9}, {3.7002756178265715`*^9, 
-   3.700275724744452*^9}, {3.7002757709606776`*^9, 3.7002758294457383`*^9}, {
-   3.7002758622918177`*^9, 3.7002758819509783`*^9}, {3.7002781301174507`*^9, 
-   3.7002781892754016`*^9}, {3.7002782814846115`*^9, 3.700278308406478*^9}, {
-   3.700278353024063*^9, 3.7002783586304655`*^9}, {3.700278390886033*^9, 
-   3.700278436760296*^9}, {3.7002797641755247`*^9, 3.700279791199234*^9}, {
-   3.7002798352318363`*^9, 3.700279857114198*^9}, {3.7002804205908318`*^9, 
-   3.7002804220649347`*^9}, {3.7002804547166433`*^9, 3.700280456512724*^9}, {
-   3.7002805450527763`*^9, 3.700280559291151*^9}, {3.700280643013583*^9, 
-   3.7002806555505295`*^9}, {3.700280686651428*^9, 3.700280723170021*^9}, {
-   3.7002807581797194`*^9, 3.7002808724644375`*^9}, {3.7002810242025814`*^9, 
-   3.70028104230394*^9}, {3.7002810817023225`*^9, 3.7002812045697803`*^9}, {
-   3.700281496592496*^9, 3.7002816885741377`*^9}, {3.7002817260630045`*^9, 
-   3.7002817741465282`*^9}, {3.7002818083918867`*^9, 3.700281848918288*^9}, {
-   3.700281881947879*^9, 3.7002819612790704`*^9}, {3.700282009794407*^9, 
-   3.700282095499147*^9}, {3.7002821271517143`*^9, 3.70028216570004*^9}, {
-   3.7002822268461285`*^9, 3.700282286115185*^9}, 3.700284430495963*^9, {
-   3.7002853148215327`*^9, 3.700285317531138*^9}, {3.7002856492208385`*^9, 
-   3.700285675574602*^9}, {3.70028593423081*^9, 3.7002859371886773`*^9}, 
-   3.70028698081794*^9, {3.7002870315889845`*^9, 3.7002870341699057`*^9}, {
-   3.700287073652311*^9, 3.7002870809982624`*^9}, {3.7002876045790925`*^9, 
-   3.7002876495459356`*^9}, {3.7002877052544184`*^9, 
-   3.7002877221163855`*^9}, {3.70028792818758*^9, 3.7002879735454645`*^9}, {
-   3.7002880569158287`*^9, 3.700288069971569*^9}, {3.7002882318611465`*^9, 
-   3.700288244913683*^9}, {3.7002885313042116`*^9, 3.7002885440819016`*^9}, {
-   3.700288712520796*^9, 3.700288734828684*^9}, {3.7002887667879324`*^9, 
-   3.7002888824545236`*^9}, {3.7002889397402415`*^9, 3.7002889587709*^9}, {
-   3.7002889921222305`*^9, 3.7002889932569904`*^9}, {3.7002890784626245`*^9, 
-   3.7002891057797327`*^9}, {3.7002891930363603`*^9, 
-   3.7002892239889507`*^9}, {3.7002892875867033`*^9, 
-   3.7002893362329507`*^9}, {3.7002893867992287`*^9, 
-   3.7002894009339075`*^9}, {3.7002895456345453`*^9, 3.700289565162272*^9}, {
-   3.7002896028870926`*^9, 3.7002896501116223`*^9}, {3.7002897138272576`*^9, 
-   3.7002897587348213`*^9}, {3.700289917053938*^9, 3.7002899236967263`*^9}, {
-   3.700290040267887*^9, 3.7002900740087185`*^9}, {3.70029016793791*^9, 
-   3.7002901689732347`*^9}, {3.700290203473916*^9, 3.70029023050812*^9}, {
-   3.7002903146949553`*^9, 3.700290374563498*^9}, {3.700290416080052*^9, 
-   3.7002904216760893`*^9}, 3.700290525219751*^9, {3.70029573960693*^9, 
-   3.700295741044244*^9}, {3.700297165580147*^9, 3.7002971777617664`*^9}, {
-   3.700297655847565*^9, 3.700297763560805*^9}, 3.700300745852416*^9, {
-   3.700388849125943*^9, 3.700388868301403*^9}, 3.7003897598780346`*^9, {
-   3.700424583990774*^9, 3.7004246127386246`*^9}, {3.700424770050282*^9, 
-   3.7004247714021864`*^9}, {3.7004248578543873`*^9, 
-   3.7004248700083694`*^9}, {3.7004250996438313`*^9, 3.700425133453104*^9}, {
-   3.7004251927623987`*^9, 3.7004252197481995`*^9}, {3.700451893694397*^9, 
-   3.700451923619459*^9}, {3.700452671001738*^9, 3.700452697754509*^9}, {
-   3.700452796355561*^9, 3.70045283340748*^9}, 
-   3.7004688106549063`*^9},ExpressionUUID->"79371eb9-da00-4832-8fca-\
-9e3ec34dde9b"],
+
+Cell[CellGroupData[{
+Cell["Point Addition", "Subtitle",
+ CellChangeTimes->{
+  3.700730276459635*^9},ExpressionUUID->"01b65336-0ccb-4914-a3d7-\
+2f12eb269604"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Panel", "[", 
-  RowBox[{"DynamicModule", "[", 
-   RowBox[{
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Row", "[", 
     RowBox[{"{", 
+     RowBox[{"\"\<\!\(\*SubscriptBox[\(P\), \(3\)]\)=\>\"", ",", 
+      RowBox[{"Style", "[", 
+       RowBox[{
+        RowBox[{"eccAdd", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"x1", ",", "y1"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x2", ",", "y2"}], "}"}], ",", "a", ",", "b", ",", "p"}], 
+         "]"}], ",", 
+        RowBox[{"FontColor", "\[Rule]", "Blue"}]}], "]"}]}], "}"}], "]"}], 
+   ",", 
+   RowBox[{"Column", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<Point Addition\>\"", ",", 
+         RowBox[{"FontSize", "\[Rule]", "14"}], ",", 
+         RowBox[{"FontWeight", "\[Rule]", "Bold"}]}], "]"}], ",", 
+       "\"\<Find value of \!\(\*SubscriptBox[\(P\), \
+\(3\)]\)=\!\(\*SubscriptBox[\(P\), \(1\)]\)+\!\(\*SubscriptBox[\(P\), \
+\(2\)]\) on Ep(a,b)\>\"", ",", 
+       "\"\<\!\(\*SuperscriptBox[\(y\), \(2\)]\)=\!\(\*SuperscriptBox[\(x\), \
+\(3\)]\)+ax+b mod p\>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+        "\"\<Please ensure that 4\!\(\*SuperscriptBox[\(a\), \(3\)]\) + \
+27\!\(\*SuperscriptBox[\(b\), \(2\)]\) mod p \[NotEqual] 0\>\"", ",", 
+         RowBox[{"FontColor", "\[Rule]", "Gray"}], ",", 
+         RowBox[{"FontSize", "\[Rule]", "8"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+       "\"\<Input values for x,y-coordinates of \!\(\*SubscriptBox[\(P\), \(1\
+\)]\)\>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Control", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x1", ",", "3", ",", "\"\<x=\>\""}], "}"}], ",", 
+             RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "}"}], "]"}], ",", 
+          "\"\<     \>\"", ",", 
+          RowBox[{"Control", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"y1", ",", "1", ",", "\"\<y=\>\""}], "}"}], ",", 
+             RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "}"}], "]"}]}], 
+         "}"}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Dynamic", "[", 
+        RowBox[{"checkPoint", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"x1", ",", "y1"}], "}"}], ",", "a", ",", "b", ",", "p"}], 
+         "]"}], "]"}], ",", "\[IndentingNewLine]", 
+       "\"\<Input values for x,y-coordinates of \!\(\*SubscriptBox[\(P\), \(2\
+\)]\)\>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Control", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x2", ",", "2", ",", "\"\<x=\>\""}], "}"}], ",", 
+             RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "}"}], "]"}], ",", 
+          "\"\<     \>\"", ",", 
+          RowBox[{"Control", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"y2", ",", "1", ",", "\"\<y=\>\""}], "}"}], ",", 
+             RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "}"}], "]"}]}], 
+         "}"}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Dynamic", "[", 
+        RowBox[{"checkPoint", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"x2", ",", "y2"}], "}"}], ",", "a", ",", "b", ",", "p"}], 
+         "]"}], "]"}], ",", "\[IndentingNewLine]", 
+       "\"\<Input values for curve parameters\>\"", ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Control", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"a", ",", "2", ",", "\"\<a=\>\""}], "}"}], ",", 
+             RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "}"}], "]"}], ",", 
+          "\"\<   \>\"", ",", 
+          RowBox[{"Control", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"b", ",", "3", ",", "\"\<b=\>\""}], "}"}], ",", 
+             RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "}"}], "]"}], ",", 
+          "\"\<   \>\"", ",", 
+          RowBox[{"Control", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"p", ",", "7", ",", "\"\<p=\>\""}], "}"}], ",", 
+             RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "}"}], "]"}]}], 
+         "}"}], "]"}], ",", 
+       RowBox[{"Dynamic", "[", 
+        RowBox[{"checkAB", "[", 
+         RowBox[{"a", ",", "b", ",", "p"}], "]"}], "]"}], ",", 
+       "\[IndentingNewLine]", "\"\<Result\>\""}], "}"}], ",", "Center"}], 
+    "]"}], ",", 
+   RowBox[{"Initialization", "\[RuleDelayed]", 
+    RowBox[{"(", 
      RowBox[{
-      RowBox[{"x1", "=", "2"}], ",", 
-      RowBox[{"y1", "=", "3"}], ",", 
-      RowBox[{"x2", "=", "4"}], ",", 
-      RowBox[{"y2", "=", "5"}], ",", 
-      RowBox[{"a", "=", "6"}], ",", 
-      RowBox[{"b", "=", "7"}], ",", 
-      RowBox[{"p", "=", "7"}]}], "}"}], ",", 
-    RowBox[{"Column", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"\"\<Point Addition on Ep(a,b)\>\"", ",", 
-        RowBox[{"Grid", "[", 
-         RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"checkAB", "[", 
+        RowBox[{"a_", ",", "b_", ",", "p_"}], "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"4", 
+                SuperscriptBox["a", "3"]}], " ", "+", " ", 
+               RowBox[{"27", 
+                SuperscriptBox["b", "2"]}]}], ",", "p"}], "]"}], 
+            "\[NotEqual]", " ", "0"}], ",", 
+           RowBox[{"Return", "[", "\"\<\>\"", "]"}], ",", 
+           RowBox[{"Return", "[", 
+            RowBox[{"Style", "[", 
+             RowBox[{
+             "\"\<4\!\(\*SuperscriptBox[\(a\), \(3\)]\) + \
+27\!\(\*SuperscriptBox[\(b\), \(2\)]\) mod p cannot be 0\>\"", ",", 
+              RowBox[{"FontColor", "\[Rule]", "Red"}], ",", 
+              RowBox[{"FontWeight", "\[Rule]", "Bold"}]}], "]"}], "]"}]}], 
+          "]"}]}], "]"}]}], ";", 
+      RowBox[{
+       RowBox[{"checkPoint", "[", 
+        RowBox[{"P_", ",", "a_", ",", "b_", ",", "p_"}], "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"x", ",", "y"}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
           RowBox[{
            RowBox[{"{", 
-            RowBox[{"\"\<x1=\>\"", ",", 
-             RowBox[{"InputField", "[", 
+            RowBox[{"x", ",", "y"}], "}"}], "=", "P"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Mod", "[", 
               RowBox[{
-               RowBox[{"Dynamic", "[", "x1", "]"}], ",", "Number"}], "]"}]}], 
-            "}"}], ",", "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"\"\<y1=\>\"", ",", 
-             RowBox[{"InputField", "[", 
-              RowBox[{
-               RowBox[{"Dynamic", "[", "y1", "]"}], ",", "Number"}], "]"}]}], 
-            "}"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"\"\<x2=\>\"", ",", 
-             RowBox[{"InputField", "[", 
-              RowBox[{
-               RowBox[{"Dynamic", "[", "x2", "]"}], ",", "Number"}], "]"}]}], 
-            "}"}], ",", "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"\"\<y2=\>\"", ",", 
-             RowBox[{"InputField", "[", 
-              RowBox[{
-               RowBox[{"Dynamic", "[", "y2", "]"}], ",", "Number"}], "]"}]}], 
-            "}"}], ",", "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"\"\< a=\>\"", ",", 
-             RowBox[{"InputField", "[", 
-              RowBox[{
-               RowBox[{"Dynamic", "[", "a", "]"}], ",", "Number"}], "]"}]}], 
-            "}"}], ",", "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"\"\< b=\>\"", ",", 
-             RowBox[{"InputField", "[", 
-              RowBox[{
-               RowBox[{"Dynamic", "[", "b", "]"}], ",", "Number"}], "]"}]}], 
-            "}"}], ",", "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"\"\< p=\>\"", ",", 
-             RowBox[{"InputField", "[", 
-              RowBox[{
-               RowBox[{"Dynamic", "[", "p", "]"}], ",", "Number"}], "]"}]}], 
-            "}"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"Row", "[", 
+               RowBox[{
+                SuperscriptBox["x", "3"], "+", 
+                RowBox[{"a", " ", "x"}], "+", "b", "-", 
+                SuperscriptBox["y", "2"]}], ",", "p"}], "]"}], "\[Equal]", 
+             "0"}], ",", 
+            RowBox[{"Return", "[", "\"\<\>\"", "]"}], ",", 
+            RowBox[{"Return", "[", 
+             RowBox[{"Style", "[", 
+              RowBox[{"\"\<Point not on curve\>\"", ",", 
+               RowBox[{"FontColor", "\[Rule]", "Red"}], ",", 
+               RowBox[{"FontWeight", "\[Rule]", "Bold"}]}], "]"}], "]"}]}], 
+           "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"inverseModulo", "[", 
+        RowBox[{"n0_", ",", "p0_"}], "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
          RowBox[{"{", 
-          RowBox[{"\"\<{x3,y3} = \>\"", ",", 
-           RowBox[{"Dynamic", "[", 
-            RowBox[{"eccAdd", "[", 
+          RowBox[{"q", ",", 
+           RowBox[{"spair", "=", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+           RowBox[{"tpair", "=", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+           RowBox[{"rpair", "=", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0"}], "}"}]}], ",", "ans", ",", 
+           RowBox[{"n", "=", "n0"}], ",", 
+           RowBox[{"p", "=", "p0"}]}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Assert", "[", 
+           RowBox[{"n", "\[NotEqual]", "0"}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"n", "<", "0"}], ",", 
+            RowBox[{"ans", "=", 
+             RowBox[{"p", "-", 
+              RowBox[{"inverseModulo", "[", 
+               RowBox[{
+                RowBox[{"-", "n"}], ",", "p"}], "]"}]}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"rpair", "=", 
+           RowBox[{"{", 
+            RowBox[{"p", ",", "n"}], "}"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"spair", "=", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "1"}], "}"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"tpair", "=", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0"}], "}"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"While", "[", 
+           RowBox[{
+            RowBox[{
              RowBox[{
+             "rpair", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+             "\[NotEqual]", "0"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"q", "=", 
+              RowBox[{"Floor", "[", 
+               RowBox[{
+                RowBox[{
+                "rpair", "\[LeftDoubleBracket]", "2", 
+                 "\[RightDoubleBracket]"}], "/", 
+                RowBox[{
+                "rpair", "\[LeftDoubleBracket]", "1", 
+                 "\[RightDoubleBracket]"}]}], "]"}]}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"rpair", "=", 
               RowBox[{"{", 
-               RowBox[{"x1", ",", "y1"}], "}"}], ",", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                 "rpair", "\[LeftDoubleBracket]", "2", 
+                  "\[RightDoubleBracket]"}], "-", 
+                 RowBox[{"q", "*", 
+                  RowBox[{
+                  "rpair", "\[LeftDoubleBracket]", "1", 
+                   "\[RightDoubleBracket]"}]}]}], ",", 
+                RowBox[{
+                "rpair", "\[LeftDoubleBracket]", "1", 
+                 "\[RightDoubleBracket]"}]}], "}"}]}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"spair", "=", 
               RowBox[{"{", 
-               RowBox[{"x2", ",", "y2"}], "}"}], ",", "a", ",", "b", ",", 
-              "p"}], "]"}], "]"}]}], "}"}], "]"}]}], "}"}], ",", "Center"}], 
-     "]"}]}], "]"}], "]"}]], "Input",
- CellChangeTimes->{{3.7002907177948275`*^9, 3.7002907363043528`*^9}, {
-  3.700290790485382*^9, 3.700290799616361*^9}, {3.700290862622643*^9, 
-  3.7002909055991397`*^9}, {3.7002910764118986`*^9, 3.7002911429573336`*^9}, {
-  3.7002911749805083`*^9, 3.700291180275919*^9}, {3.7002913291477985`*^9, 
-  3.700291373829672*^9}, {3.700291408013503*^9, 3.7002915118187323`*^9}, {
-  3.700291585886466*^9, 3.700291615817371*^9}, {3.7002925198619986`*^9, 
-  3.700292536819002*^9}, {3.700292650680709*^9, 3.7002926992982464`*^9}, {
-  3.7002927299683704`*^9, 3.7002928338776712`*^9}, {3.700295322282321*^9, 
-  3.700295417524979*^9}, {3.7002956185938396`*^9, 3.7002956230909305`*^9}, {
-  3.7003007183559265`*^9, 
-  3.70030072601705*^9}},ExpressionUUID->"5949f30b-17be-4504-a088-\
-7cd1e2f13f78"],
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                 "spair", "\[LeftDoubleBracket]", "2", 
+                  "\[RightDoubleBracket]"}], "-", 
+                 RowBox[{"q", "*", 
+                  RowBox[{
+                  "spair", "\[LeftDoubleBracket]", "1", 
+                   "\[RightDoubleBracket]"}]}]}], ",", 
+                RowBox[{
+                "spair", "\[LeftDoubleBracket]", "1", 
+                 "\[RightDoubleBracket]"}]}], "}"}]}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"tpair", "=", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                 "tpair", "\[LeftDoubleBracket]", "2", 
+                  "\[RightDoubleBracket]"}], "-", 
+                 RowBox[{"q", "*", 
+                  RowBox[{
+                  "tpair", "\[LeftDoubleBracket]", "1", 
+                   "\[RightDoubleBracket]"}]}]}], ",", 
+                RowBox[{
+                "tpair", "\[LeftDoubleBracket]", "1", 
+                 "\[RightDoubleBracket]"}]}], "}"}]}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Assert", "[", 
+           RowBox[{
+            RowBox[{
+            "rpair", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], "==",
+             "1"}], "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Assert", "[", 
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"n", "*", 
+                RowBox[{
+                "spair", "\[LeftDoubleBracket]", "2", 
+                 "\[RightDoubleBracket]"}]}], ")"}], ",", "p"}], "]"}], "==", 
+            "1"}], "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{
+            "spair", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+            ",", "p"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+      RowBox[{
+       RowBox[{"eccAdd", "[", 
+        RowBox[{"p1_", ",", "p2_", ",", "a_", ",", "b_", ",", "order_"}], 
+        "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+          "x1", ",", "x2", ",", "x3", ",", "y1", ",", "y2", ",", "y3", ",", 
+           "m"}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"x1", ",", "y1"}], "}"}], "=", "p1"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"x2", ",", "y2"}], "}"}], "=", "p2"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"x1", "\[Equal]", "\[Infinity]"}], ",", 
+            RowBox[{"Return", "[", "p2", "]"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"x2", "\[Equal]", "\[Infinity]"}], ",", 
+            RowBox[{"Return", "[", "p1", "]"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"x1", "\[Equal]", "x2"}], "&&", 
+             RowBox[{
+              RowBox[{"Mod", "[", 
+               RowBox[{
+                RowBox[{"y1", "+", "y2"}], ",", "order"}], "]"}], "\[Equal]", 
+              "0"}]}], ",", 
+            RowBox[{"Return", "[", 
+             RowBox[{"{", 
+              RowBox[{"\[Infinity]", ",", "\[Infinity]"}], "}"}], "]"}]}], 
+           "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"p1", "\[Equal]", "p2"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"y1", "\[Equal]", "0"}], ",", 
+               RowBox[{"Return", "[", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", "0"}], "}"}], "]"}]}], "]"}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"m", "=", 
+              RowBox[{"Mod", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"3", 
+                    SuperscriptBox["x1", "2"]}], "+", "a"}], ")"}], "*", 
+                 RowBox[{"inverseModulo", "[", 
+                  RowBox[{
+                   RowBox[{"2", "y1"}], ",", "order"}], "]"}]}], ",", 
+                "order"}], "]"}]}]}], "\[IndentingNewLine]", ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"m", "=", 
+              RowBox[{"Mod", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"y2", "-", "y1"}], ")"}], "*", 
+                 RowBox[{"inverseModulo", "[", 
+                  RowBox[{
+                   RowBox[{"x2", "-", "x1"}], ",", "order"}], "]"}]}], ",", 
+                "order"}], "]"}]}], ";"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"x3", "=", 
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{
+              SuperscriptBox["m", "2"], "-", "x1", "-", "x2"}], ",", 
+             "order"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"y3", "=", 
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"m", 
+               RowBox[{"(", 
+                RowBox[{"x1", "-", "x3"}], ")"}]}], "-", "y1"}], ",", 
+             "order"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"x3", ",", "y3"}], "}"}]}]}], "\[IndentingNewLine]", 
+        "]"}]}], ";", 
+      RowBox[{
+       RowBox[{"eccMult", "[", 
+        RowBox[{"k_", ",", "P_", ",", "a_", ",", "b_", ",", "order_"}], "]"}],
+        ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"xlist", "=", 
+            RowBox[{"{", "}"}]}], ",", "x1", ",", "x2", ",", 
+           RowBox[{"ktmp", "=", "k"}], ",", 
+           RowBox[{"power", "=", "0"}], ",", 
+           RowBox[{"Q", "=", 
+            RowBox[{"{", 
+             RowBox[{"\[Infinity]", ",", "\[Infinity]"}], "}"}]}], ",", 
+           RowBox[{"Ptmp", "=", "P"}], ",", 
+           RowBox[{"adstring", "=", "\"\<\>\""}]}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"x1", ",", "x2"}], "}"}], "=", "P"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"While", "[", 
+           RowBox[{
+            RowBox[{"ktmp", ">", "0"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"OddQ", "[", "ktmp", "]"}], ",", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"xlist", "=", 
+                 RowBox[{"Append", "[", 
+                  RowBox[{"xlist", ",", 
+                   RowBox[{
+                    SuperscriptBox["\"\<2\>\"", "power"], "\"\<P\>\""}]}], 
+                  "]"}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"Q", "=", 
+                 RowBox[{"eccAdd", "[", 
+                  RowBox[{
+                  "Q", ",", "Ptmp", ",", "a", ",", "b", ",", "order"}], 
+                  "]"}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"adstring", "=", 
+                 RowBox[{"adstring", "<>", "\"\<A\>\""}]}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"power", "+=", "1"}], ";", "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"ktmp", ">", "1"}], ",", 
+               RowBox[{
+                RowBox[{"Ptmp", "=", 
+                 RowBox[{"eccAdd", "[", 
+                  RowBox[{
+                  "Ptmp", ",", "Ptmp", ",", "a", ",", "b", ",", "order"}], 
+                  "]"}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"adstring", "=", 
+                 RowBox[{"adstring", "<>", "\"\<D\>\""}]}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"ktmp", "=", 
+              RowBox[{"Floor", "[", 
+               RowBox[{"ktmp", "/", "2"}], "]"}]}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"xlist", ",", "adstring", ",", "Q"}], "}"}]}]}], 
+        "\[IndentingNewLine]", "]"}]}]}], ")"}]}]}], "]"}]], "Input",
+ CellOpen->False,
+ CellChangeTimes->{{3.7007399184087524`*^9, 3.700740006148384*^9}, 
+   3.7007400509687123`*^9, {3.700740095595024*^9, 3.7007401268892393`*^9}, {
+   3.7007401630510874`*^9, 3.7007401653223104`*^9}, {3.7007402828271923`*^9, 
+   3.700740365379101*^9}, {3.700740408156971*^9, 3.700740465917239*^9}, {
+   3.7007405261777077`*^9, 3.7007405528733697`*^9}, {3.7007406030808363`*^9, 
+   3.700740628317474*^9}},ExpressionUUID->"6dda1e23-f4a4-4c3a-8747-\
+32a3c2a72e45"],
 
 Cell[BoxData[
- PanelBox[
-  DynamicModuleBox[{$CellContext`x1$$ = 2, $CellContext`y1$$ = 
-   3, $CellContext`x2$$ = 4, $CellContext`y2$$ = 5, $CellContext`a$$ = 
-   6, $CellContext`b$$ = 7, $CellContext`p$$ = 7}, 
-   TagBox[GridBox[{
-      {"\<\"Point Addition on Ep(a,b)\"\>"},
-      {
-       TagBox[GridBox[{
-          {"\<\"x1=\"\>", 
-           InputFieldBox[Dynamic[$CellContext`x1$$], Number]},
-          {"\<\"y1=\"\>", 
-           InputFieldBox[Dynamic[$CellContext`y1$$], Number]},
-          {"\<\"x2=\"\>", 
-           InputFieldBox[Dynamic[$CellContext`x2$$], Number]},
-          {"\<\"y2=\"\>", 
-           InputFieldBox[Dynamic[$CellContext`y2$$], Number]},
-          {"\<\" a=\"\>", 
-           InputFieldBox[Dynamic[$CellContext`a$$], Number]},
-          {"\<\" b=\"\>", 
-           InputFieldBox[Dynamic[$CellContext`b$$], Number]},
-          {"\<\" p=\"\>", 
-           InputFieldBox[Dynamic[$CellContext`p$$], Number]}
-         },
-         AutoDelete->False,
-         GridBoxItemSize->{
-          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-        "Grid"]},
-      {
-       TemplateBox[{"\"{x3,y3} = \"",DynamicBox[
-          ToBoxes[
-           $CellContext`eccAdd[{$CellContext`x1$$, $CellContext`y1$$}, \
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 2, $CellContext`b$$ = 
+    3, $CellContext`p$$ = 7, $CellContext`x1$$ = 3, $CellContext`x2$$ = 
+    2, $CellContext`y1$$ = 1, $CellContext`y2$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`x1$$], 3, "x="}}, {{
+       Hold[$CellContext`y1$$], 1, "y="}}, {{
+       Hold[$CellContext`x2$$], 2, "x="}}, {{
+       Hold[$CellContext`y2$$], 1, "y="}}, {{
+       Hold[$CellContext`a$$], 2, "a="}}, {{
+       Hold[$CellContext`b$$], 3, "b="}}, {{
+       Hold[$CellContext`p$$], 7, "p="}}, {
+      Hold[
+       Column[{
+         Style["Point Addition", FontSize -> 14, FontWeight -> Bold], 
+         "Find value of \!\(\*SubscriptBox[\(P\), \
+\(3\)]\)=\!\(\*SubscriptBox[\(P\), \(1\)]\)+\!\(\*SubscriptBox[\(P\), \
+\(2\)]\) on Ep(a,b)", 
+         "\!\(\*SuperscriptBox[\(y\), \(2\)]\)=\!\(\*SuperscriptBox[\(x\), \
+\(3\)]\)+ax+b mod p", 
+         Style[
+         "Please ensure that 4\!\(\*SuperscriptBox[\(a\), \(3\)]\) + \
+27\!\(\*SuperscriptBox[\(b\), \(2\)]\) mod p \[NotEqual] 0", FontColor -> 
+          GrayLevel[0.5], FontSize -> 8], "", 
+         "Input values for x,y-coordinates of \!\(\*SubscriptBox[\(P\), \
+\(1\)]\)", 
+         Row[{
+           Manipulate`Place[1], "     ", 
+           Manipulate`Place[2]}], 
+         Dynamic[
+          $CellContext`checkPoint[{$CellContext`x1$$, $CellContext`y1$$}, \
+$CellContext`a$$, $CellContext`b$$, $CellContext`p$$]], 
+         "Input values for x,y-coordinates of \!\(\*SubscriptBox[\(P\), \
+\(2\)]\)", 
+         Row[{
+           Manipulate`Place[3], "     ", 
+           Manipulate`Place[4]}], 
+         Dynamic[
+          $CellContext`checkPoint[{$CellContext`x2$$, $CellContext`y2$$}, \
+$CellContext`a$$, $CellContext`b$$, $CellContext`p$$]], 
+         "Input values for curve parameters", 
+         Row[{
+           Manipulate`Place[5], "   ", 
+           Manipulate`Place[6], "   ", 
+           Manipulate`Place[7]}], 
+         Dynamic[
+          $CellContext`checkAB[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`p$$]], "Result"}, Center]], Manipulate`Dump`ThisIsNotAControl}}, 
+    Typeset`size$$ = {112., {4., 15.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 2, $CellContext`b$$ = 
+        3, $CellContext`p$$ = 7, $CellContext`x1$$ = 3, $CellContext`x2$$ = 
+        2, $CellContext`y1$$ = 1, $CellContext`y2$$ = 1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Row[{"\!\(\*SubscriptBox[\(P\), \(3\)]\)=", 
+         Style[
+          $CellContext`eccAdd[{$CellContext`x1$$, $CellContext`y1$$}, \
 {$CellContext`x2$$, $CellContext`y2$$}, $CellContext`a$$, $CellContext`b$$, \
-$CellContext`p$$], StandardForm]]},
-        "RowDefault"]}
-     },
-     DefaultBaseStyle->"Column",
-     GridBoxAlignment->{"Columns" -> {{Center}}},
-     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-    "Column"],
-   DynamicModuleValues:>{}]]], "Output",
+$CellContext`p$$], FontColor -> Blue]}], 
+      "Specifications" :> {{{$CellContext`x1$$, 3, "x="}, FieldSize -> Tiny, 
+         ControlPlacement -> 1}, {{$CellContext`y1$$, 1, "y="}, FieldSize -> 
+         Tiny, ControlPlacement -> 2}, {{$CellContext`x2$$, 2, "x="}, 
+         FieldSize -> Tiny, ControlPlacement -> 
+         3}, {{$CellContext`y2$$, 1, "y="}, FieldSize -> Tiny, 
+         ControlPlacement -> 4}, {{$CellContext`a$$, 2, "a="}, FieldSize -> 
+         Tiny, ControlPlacement -> 5}, {{$CellContext`b$$, 3, "b="}, 
+         FieldSize -> Tiny, ControlPlacement -> 
+         6}, {{$CellContext`p$$, 7, "p="}, FieldSize -> Tiny, 
+         ControlPlacement -> 7}, 
+        Column[{
+          Style["Point Addition", FontSize -> 14, FontWeight -> Bold], 
+          "Find value of \!\(\*SubscriptBox[\(P\), \
+\(3\)]\)=\!\(\*SubscriptBox[\(P\), \(1\)]\)+\!\(\*SubscriptBox[\(P\), \
+\(2\)]\) on Ep(a,b)", 
+          "\!\(\*SuperscriptBox[\(y\), \(2\)]\)=\!\(\*SuperscriptBox[\(x\), \
+\(3\)]\)+ax+b mod p", 
+          Style[
+          "Please ensure that 4\!\(\*SuperscriptBox[\(a\), \(3\)]\) + \
+27\!\(\*SuperscriptBox[\(b\), \(2\)]\) mod p \[NotEqual] 0", FontColor -> 
+           GrayLevel[0.5], FontSize -> 8], "", 
+          "Input values for x,y-coordinates of \!\(\*SubscriptBox[\(P\), \
+\(1\)]\)", 
+          Row[{
+            Manipulate`Place[1], "     ", 
+            Manipulate`Place[2]}], 
+          Dynamic[
+           $CellContext`checkPoint[{$CellContext`x1$$, $CellContext`y1$$}, \
+$CellContext`a$$, $CellContext`b$$, $CellContext`p$$]], 
+          "Input values for x,y-coordinates of \!\(\*SubscriptBox[\(P\), \
+\(2\)]\)", 
+          Row[{
+            Manipulate`Place[3], "     ", 
+            Manipulate`Place[4]}], 
+          Dynamic[
+           $CellContext`checkPoint[{$CellContext`x2$$, $CellContext`y2$$}, \
+$CellContext`a$$, $CellContext`b$$, $CellContext`p$$]], 
+          "Input values for curve parameters", 
+          Row[{
+            Manipulate`Place[5], "   ", 
+            Manipulate`Place[6], "   ", 
+            Manipulate`Place[7]}], 
+          Dynamic[
+           $CellContext`checkAB[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`p$$]], "Result"}, Center]}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{555., {299., 310.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>(($CellContext`checkAB[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`b, 
+          Blank[]], 
+         Pattern[$CellContext`p, 
+          Blank[]]] := Module[{}, 
+         If[
+         Mod[4 $CellContext`a^3 + 27 $CellContext`b^2, $CellContext`p] != 0, 
+          Return[""], 
+          Return[
+           Style[
+           "4\!\(\*SuperscriptBox[\(a\), \(3\)]\) + \
+27\!\(\*SuperscriptBox[\(b\), \(2\)]\) mod p cannot be 0", FontColor -> Red, 
+            FontWeight -> Bold]]]]; $CellContext`checkPoint[
+         Pattern[$CellContext`P, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`b, 
+          Blank[]], 
+         Pattern[$CellContext`p, 
+          Blank[]]] := 
+       Module[{$CellContext`x, $CellContext`y}, {$CellContext`x, \
+$CellContext`y} = $CellContext`P; 
+         If[Mod[$CellContext`x^3 + $CellContext`a $CellContext`x + \
+$CellContext`b - $CellContext`y^2, $CellContext`p] == 0, 
+           Return[""], 
+           Return[
+            Style[
+            "Point not on curve", FontColor -> Red, FontWeight -> Bold]]]; 
+         Null]; $CellContext`inverseModulo[
+         Pattern[$CellContext`n0, 
+          Blank[]], 
+         Pattern[$CellContext`p0, 
+          Blank[]]] := 
+       Module[{$CellContext`q, $CellContext`spair = {0, 
+           0}, $CellContext`tpair = {0, 0}, $CellContext`rpair = {0, 
+           0}, $CellContext`ans, $CellContext`n = $CellContext`n0, \
+$CellContext`p = $CellContext`p0}, Assert[$CellContext`n != 0]; 
+         If[$CellContext`n < 
+           0, $CellContext`ans = $CellContext`p - \
+$CellContext`inverseModulo[-$CellContext`n, $CellContext`p]]; \
+$CellContext`rpair = {$CellContext`p, $CellContext`n}; $CellContext`spair = {
+           0, 1}; $CellContext`tpair = {1, 0}; 
+         While[Part[$CellContext`rpair, 1] != 
+           0, $CellContext`q = 
+            Floor[Part[$CellContext`rpair, 2]/
+              Part[$CellContext`rpair, 1]]; $CellContext`rpair = {
+             Part[$CellContext`rpair, 2] - $CellContext`q 
+              Part[$CellContext`rpair, 1], 
+              Part[$CellContext`rpair, 1]}; $CellContext`spair = {
+             Part[$CellContext`spair, 2] - $CellContext`q 
+              Part[$CellContext`spair, 1], 
+              Part[$CellContext`spair, 1]}; $CellContext`tpair = {
+             Part[$CellContext`tpair, 2] - $CellContext`q 
+              Part[$CellContext`tpair, 1], 
+              Part[$CellContext`tpair, 1]}]; 
+         Assert[Part[$CellContext`rpair, 2] == 1]; 
+         Assert[Mod[$CellContext`n 
+             Part[$CellContext`spair, 2], $CellContext`p] == 1]; Mod[
+           Part[$CellContext`spair, 2], $CellContext`p]]; $CellContext`eccAdd[
+         Pattern[$CellContext`p1, 
+          Blank[]], 
+         Pattern[$CellContext`p2, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`b, 
+          Blank[]], 
+         Pattern[$CellContext`order, 
+          Blank[]]] := 
+       Module[{$CellContext`x1, $CellContext`x2, $CellContext`x3, \
+$CellContext`y1, $CellContext`y2, $CellContext`y3, $CellContext`m}, \
+{$CellContext`x1, $CellContext`y1} = $CellContext`p1; {$CellContext`x2, \
+$CellContext`y2} = $CellContext`p2; If[$CellContext`x1 == Infinity, 
+           Return[$CellContext`p2]]; If[$CellContext`x2 == Infinity, 
+           Return[$CellContext`p1]]; If[
+           
+           And[$CellContext`x1 == $CellContext`x2, 
+            Mod[$CellContext`y1 + $CellContext`y2, $CellContext`order] == 0], 
+           Return[{Infinity, Infinity}]]; 
+         If[$CellContext`p1 == $CellContext`p2, If[$CellContext`y1 == 0, 
+             Return[{0, 0}]]; $CellContext`m = 
+            Mod[(3 $CellContext`x1^2 + $CellContext`a) \
+$CellContext`inverseModulo[
+               2 $CellContext`y1, $CellContext`order], $CellContext`order], \
+$CellContext`m = 
+            Mod[($CellContext`y2 - $CellContext`y1) \
+$CellContext`inverseModulo[$CellContext`x2 - $CellContext`x1, \
+$CellContext`order], $CellContext`order]; Null]; $CellContext`x3 = 
+          Mod[$CellContext`m^2 - $CellContext`x1 - $CellContext`x2, \
+$CellContext`order]; $CellContext`y3 = 
+          Mod[$CellContext`m ($CellContext`x1 - $CellContext`x3) - \
+$CellContext`y1, $CellContext`order]; {$CellContext`x3, $CellContext`y3}]; \
+$CellContext`eccMult[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`P, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`b, 
+          Blank[]], 
+         Pattern[$CellContext`order, 
+          Blank[]]] := 
+       Module[{$CellContext`xlist = {}, $CellContext`x1, $CellContext`x2, \
+$CellContext`ktmp = $CellContext`k, $CellContext`power = 
+          0, $CellContext`Q = {
+           Infinity, 
+            Infinity}, $CellContext`Ptmp = $CellContext`P, \
+$CellContext`adstring = 
+          ""}, {$CellContext`x1, $CellContext`x2} = $CellContext`P; 
+         While[$CellContext`ktmp > 0, If[
+             
+             OddQ[$CellContext`ktmp], $CellContext`xlist = 
+              Append[$CellContext`xlist, "2"^$CellContext`power 
+                "P"]; $CellContext`Q = $CellContext`eccAdd[$CellContext`Q, \
+$CellContext`Ptmp, $CellContext`a, $CellContext`b, $CellContext`order]; \
+$CellContext`adstring = StringJoin[$CellContext`adstring, "A"]]; 
+           AddTo[$CellContext`power, 1]; 
+           If[$CellContext`ktmp > 
+             1, $CellContext`Ptmp = $CellContext`eccAdd[$CellContext`Ptmp, \
+$CellContext`Ptmp, $CellContext`a, $CellContext`b, $CellContext`order]; \
+$CellContext`adstring = 
+              StringJoin[$CellContext`adstring, "D"]]; $CellContext`ktmp = 
+            Floor[$CellContext`ktmp/
+              2]]; {$CellContext`xlist, $CellContext`adstring, \
+$CellContext`Q}]); Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
  CellChangeTimes->{
-  3.700290531178222*^9, 3.7002907377007074`*^9, {3.7002908003847227`*^9, 
-   3.7002908248132257`*^9}, {3.7002908693561225`*^9, 
-   3.7002909063083286`*^9}, {3.7002910770288153`*^9, 3.700291088248844*^9}, {
-   3.7002911278672466`*^9, 3.7002911458728976`*^9}, {3.7002914105473585`*^9, 
-   3.700291434984688*^9}, 3.700291489519427*^9, {3.7002915872411985`*^9, 
-   3.7002916166112814`*^9}, {3.700292523838193*^9, 3.700292538191028*^9}, 
-   3.700292659557631*^9, 3.700292700015607*^9, 3.700292741817231*^9, {
-   3.700292781543544*^9, 3.700292834524098*^9}, 3.700295209971613*^9, {
-   3.7002953913370886`*^9, 3.7002954188068686`*^9}, 3.7002956245848694`*^9, 
-   3.700297749914694*^9, {3.700300721197276*^9, 3.700300726836875*^9}, 
-   3.700417743940775*^9, 3.7004247759032335`*^9, 3.7004688191756115`*^9, {
-   3.700518209070439*^9, 
-   3.7005182133896065`*^9}},ExpressionUUID->"aa078765-d7f2-4f3a-8a36-\
-29c6a9e473cf"]
+  3.7007400787020464`*^9, 3.700740128881613*^9, {3.700740539862147*^9, 
+   3.7007405533286486`*^9}, {3.700740606362564*^9, 
+   3.7007406301769557`*^9}},ExpressionUUID->"ee190fe8-b522-4bc7-9d93-\
+614bfdf61150"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
+Cell["Point Multiplication", "Subtitle",
+ CellChangeTimes->{
+  3.7007302915537167`*^9},ExpressionUUID->"292f5c22-748c-4fc8-b1ac-\
+f2f46f4f92ba"],
+
+Cell[CellGroupData[{
+
 Cell[BoxData[
- RowBox[{"Panel", "[", 
-  RowBox[{"DynamicModule", "[", 
-   RowBox[{
-    RowBox[{"{", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Column", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<\!\(\*SubscriptBox[\(P\), \(2\)]\) = \>\"", ",", " ", 
+          RowBox[{"Style", "[", 
+           RowBox[{
+            RowBox[{"Dynamic", "[", 
+             RowBox[{
+              RowBox[{"eccMult", "[", 
+               RowBox[{"k", ",", 
+                RowBox[{"{", 
+                 RowBox[{"x1", ",", "y1"}], "}"}], ",", "a", ",", "b", ",", 
+                "p"}], "]"}], "\[LeftDoubleBracket]", "3", 
+              "\[RightDoubleBracket]"}], "]"}], ",", 
+            RowBox[{"FontColor", "\[Rule]", "Blue"}]}], "]"}]}], "}"}], "]"}],
+        ",", "\"\<\>\"", ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<order of operations for point multiplication:\>\"", ",", 
+         RowBox[{"FontSize", "\[Rule]", "11"}]}], "]"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"Dynamic", "[", 
+          RowBox[{
+           RowBox[{"eccMult", "[", 
+            RowBox[{"k", ",", 
+             RowBox[{"{", 
+              RowBox[{"x1", ",", "y1"}], "}"}], ",", "a", ",", "b", ",", 
+             "p"}], "]"}], "\[LeftDoubleBracket]", "2", 
+           "\[RightDoubleBracket]"}], "]"}], ",", 
+         RowBox[{"FontColor", "\[Rule]", "Blue"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+        "\"\<A for an addition operation, D for a doubling operation\>\"", 
+         ",", 
+         RowBox[{"FontSize", "\[Rule]", "8"}]}], "]"}], ",", "\"\<\>\"", ",", 
+       "\"\<Terms involved in point multiplication: \>\"", ",", " ", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"Dynamic", "[", 
+          RowBox[{
+           RowBox[{"eccMult", "[", 
+            RowBox[{"k", ",", 
+             RowBox[{"{", 
+              RowBox[{"x1", ",", "y1"}], "}"}], ",", "a", ",", "b", ",", 
+             "p"}], "]"}], "\[LeftDoubleBracket]", "1", 
+           "\[RightDoubleBracket]"}], "]"}], ",", 
+         RowBox[{"FontColor", "\[Rule]", "Blue"}]}], "]"}]}], "}"}], ",", 
+     "Center"}], "]"}], ",", 
+   RowBox[{"Column", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<Point Multiplication\>\"", ",", 
+         RowBox[{"FontSize", "\[Rule]", "14"}], ",", 
+         RowBox[{"FontWeight", "\[Rule]", "Bold"}]}], "]"}], ",", 
+       "\"\<Find value of \!\(\*SubscriptBox[\(P\), \
+\(2\)]\)=k*\!\(\*SubscriptBox[\(P\), \(1\)]\) on Ep(a,b)\>\"", ",", 
+       "\"\<\!\(\*SuperscriptBox[\(y\), \(2\)]\)=\!\(\*SuperscriptBox[\(x\), \
+\(3\)]\)+ax+b mod p\>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+        "\"\<Please ensure that 4\!\(\*SuperscriptBox[\(a\), \(3\)]\) + \
+27\!\(\*SuperscriptBox[\(b\), \(2\)]\) mod p \[NotEqual] 0\>\"", ",", 
+         RowBox[{"FontSize", "\[Rule]", "8"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+       "\"\<Input value for k\>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{"Control", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"k", ",", "3", ",", "\"\<k=\>\""}], "}"}], ",", 
+            RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "}"}], "]"}], "}"}], 
+        "]"}], ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+       "\[IndentingNewLine]", 
+       "\"\<Input values for x,y-coordinates of \!\(\*SubscriptBox[\(P\), \(1\
+\)]\)\>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Control", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x1", ",", "200", ",", "\"\<x=\>\""}], "}"}], ",", 
+             RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "}"}], "]"}], ",", 
+          "\"\<     \>\"", ",", 
+          RowBox[{"Control", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"y1", ",", "39", ",", "\"\<y=\>\""}], "}"}], ",", 
+             RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "}"}], "]"}]}], 
+         "}"}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Dynamic", "[", 
+        RowBox[{"checkPoint", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"x1", ",", "y1"}], "}"}], ",", "a", ",", "b", ",", "p"}], 
+         "]"}], "]"}], ",", "\[IndentingNewLine]", 
+       "\"\<Input values for curve parameters\>\"", ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Control", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"a", ",", "2", ",", "\"\<a=\>\""}], "}"}], ",", 
+             RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "}"}], "]"}], ",", 
+          "\"\<   \>\"", ",", 
+          RowBox[{"Control", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"b", ",", "3", ",", "\"\<b=\>\""}], "}"}], ",", 
+             RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "}"}], "]"}], ",", 
+          "\"\<   \>\"", ",", 
+          RowBox[{"Control", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"p", ",", "263", ",", "\"\<p=\>\""}], "}"}], ",", 
+             RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "}"}], "]"}]}], 
+         "}"}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Dynamic", "[", 
+        RowBox[{"checkAB", "[", 
+         RowBox[{"a", ",", "b", ",", "p"}], "]"}], "]"}], ",", 
+       "\[IndentingNewLine]", "\"\<Result\>\""}], "}"}], ",", "Center"}], 
+    "]"}], ",", 
+   RowBox[{"Initialization", "\[RuleDelayed]", 
+    RowBox[{"(", 
      RowBox[{
-      RowBox[{"x", "=", "2"}], ",", 
-      RowBox[{"y", "=", "3"}], ",", 
-      RowBox[{"k", "=", "3"}], ",", 
-      RowBox[{"a", "=", "6"}], ",", 
-      RowBox[{"b", "=", "7"}], ",", 
-      RowBox[{"p", "=", "7"}]}], "}"}], ",", 
-    RowBox[{"Column", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"\"\<Point Multiplication on Ep(a,b)\>\"", ",", 
-        RowBox[{"Grid", "[", 
-         RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"checkAB", "[", 
+        RowBox[{"a_", ",", "b_", ",", "p_"}], "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"4", 
+                SuperscriptBox["a", "3"]}], " ", "+", " ", 
+               RowBox[{"27", 
+                SuperscriptBox["b", "2"]}]}], ",", "p"}], "]"}], 
+            "\[NotEqual]", " ", "0"}], ",", 
+           RowBox[{"Return", "[", "\"\<\>\"", "]"}], ",", 
+           RowBox[{"Return", "[", 
+            RowBox[{"Style", "[", 
+             RowBox[{
+             "\"\<4\!\(\*SuperscriptBox[\(a\), \(3\)]\) + \
+27\!\(\*SuperscriptBox[\(b\), \(2\)]\) mod p cannot be 0\>\"", ",", 
+              RowBox[{"FontColor", "\[Rule]", "Red"}], ",", 
+              RowBox[{"FontWeight", "\[Rule]", "Bold"}]}], "]"}], "]"}]}], 
+          "]"}]}], "]"}]}], ";", 
+      RowBox[{
+       RowBox[{"checkPoint", "[", 
+        RowBox[{"P_", ",", "a_", ",", "b_", ",", "p_"}], "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"x", ",", "y"}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
           RowBox[{
            RowBox[{"{", 
-            RowBox[{"\"\<k=\>\"", ",", 
-             RowBox[{"InputField", "[", 
-              RowBox[{
-               RowBox[{"Dynamic", "[", "k", "]"}], ",", "Number"}], "]"}]}], 
-            "}"}], ",", "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"\"\<x=\>\"", ",", 
-             RowBox[{"InputField", "[", 
-              RowBox[{
-               RowBox[{"Dynamic", "[", "x", "]"}], ",", "Number"}], "]"}]}], 
-            "}"}], ",", "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"\"\<y=\>\"", ",", 
-             RowBox[{"InputField", "[", 
-              RowBox[{
-               RowBox[{"Dynamic", "[", "y", "]"}], ",", "Number"}], "]"}]}], 
-            "}"}], ",", "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"\"\< a=\>\"", ",", 
-             RowBox[{"InputField", "[", 
-              RowBox[{
-               RowBox[{"Dynamic", "[", "a", "]"}], ",", "Number"}], "]"}]}], 
-            "}"}], ",", "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"\"\< b=\>\"", ",", 
-             RowBox[{"InputField", "[", 
-              RowBox[{
-               RowBox[{"Dynamic", "[", "b", "]"}], ",", "Number"}], "]"}]}], 
-            "}"}], ",", "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"\"\< p=\>\"", ",", 
-             RowBox[{"InputField", "[", 
-              RowBox[{
-               RowBox[{"Dynamic", "[", "p", "]"}], ",", "Number"}], "]"}]}], 
-            "}"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"Row", "[", 
-         RowBox[{"{", 
-          RowBox[{"\"\<k*{x,y} = \>\"", ",", 
-           RowBox[{"Dynamic", "[", 
+            RowBox[{"x", ",", "y"}], "}"}], "=", "P"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
             RowBox[{
-             RowBox[{"eccMult", "[", 
-              RowBox[{"k", ",", 
-               RowBox[{"{", 
-                RowBox[{"x", ",", "y"}], "}"}], ",", "a", ",", "b", ",", 
-               "p"}], "]"}], "\[LeftDoubleBracket]", "3", 
-             "\[RightDoubleBracket]"}], "]"}]}], "}"}], "]"}], ",", 
-        RowBox[{"Row", "[", 
+             RowBox[{"Mod", "[", 
+              RowBox[{
+               RowBox[{
+                SuperscriptBox["x", "3"], "+", 
+                RowBox[{"a", " ", "x"}], "+", "b", "-", 
+                SuperscriptBox["y", "2"]}], ",", "p"}], "]"}], "\[Equal]", 
+             "0"}], ",", 
+            RowBox[{"Return", "[", "\"\<\>\"", "]"}], ",", 
+            RowBox[{"Return", "[", 
+             RowBox[{"Style", "[", 
+              RowBox[{"\"\<Point not on curve\>\"", ",", 
+               RowBox[{"FontColor", "\[Rule]", "Red"}], ",", 
+               RowBox[{"FontWeight", "\[Rule]", "Bold"}]}], "]"}], "]"}]}], 
+           "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"inverseModulo", "[", 
+        RowBox[{"n0_", ",", "p0_"}], "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
          RowBox[{"{", 
-          RowBox[{"\"\<Order of operation: \>\"", ",", 
-           RowBox[{"Dynamic", "[", 
+          RowBox[{"q", ",", 
+           RowBox[{"spair", "=", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+           RowBox[{"tpair", "=", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+           RowBox[{"rpair", "=", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0"}], "}"}]}], ",", "ans", ",", 
+           RowBox[{"n", "=", "n0"}], ",", 
+           RowBox[{"p", "=", "p0"}]}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Assert", "[", 
+           RowBox[{"n", "\[NotEqual]", "0"}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"n", "<", "0"}], ",", 
+            RowBox[{"ans", "=", 
+             RowBox[{"p", "-", 
+              RowBox[{"inverseModulo", "[", 
+               RowBox[{
+                RowBox[{"-", "n"}], ",", "p"}], "]"}]}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"rpair", "=", 
+           RowBox[{"{", 
+            RowBox[{"p", ",", "n"}], "}"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"spair", "=", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "1"}], "}"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"tpair", "=", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0"}], "}"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"While", "[", 
+           RowBox[{
             RowBox[{
-             RowBox[{"eccMult", "[", 
-              RowBox[{"k", ",", 
-               RowBox[{"{", 
-                RowBox[{"x", ",", "y"}], "}"}], ",", "a", ",", "b", ",", 
-               "p"}], "]"}], "\[LeftDoubleBracket]", "2", 
-             "\[RightDoubleBracket]"}], "]"}]}], "}"}], "]"}], ",", 
-        RowBox[{"Row", "[", 
+             RowBox[{
+             "rpair", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+             "\[NotEqual]", "0"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"q", "=", 
+              RowBox[{"Floor", "[", 
+               RowBox[{
+                RowBox[{
+                "rpair", "\[LeftDoubleBracket]", "2", 
+                 "\[RightDoubleBracket]"}], "/", 
+                RowBox[{
+                "rpair", "\[LeftDoubleBracket]", "1", 
+                 "\[RightDoubleBracket]"}]}], "]"}]}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"rpair", "=", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                 "rpair", "\[LeftDoubleBracket]", "2", 
+                  "\[RightDoubleBracket]"}], "-", 
+                 RowBox[{"q", "*", 
+                  RowBox[{
+                  "rpair", "\[LeftDoubleBracket]", "1", 
+                   "\[RightDoubleBracket]"}]}]}], ",", 
+                RowBox[{
+                "rpair", "\[LeftDoubleBracket]", "1", 
+                 "\[RightDoubleBracket]"}]}], "}"}]}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"spair", "=", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                 "spair", "\[LeftDoubleBracket]", "2", 
+                  "\[RightDoubleBracket]"}], "-", 
+                 RowBox[{"q", "*", 
+                  RowBox[{
+                  "spair", "\[LeftDoubleBracket]", "1", 
+                   "\[RightDoubleBracket]"}]}]}], ",", 
+                RowBox[{
+                "spair", "\[LeftDoubleBracket]", "1", 
+                 "\[RightDoubleBracket]"}]}], "}"}]}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"tpair", "=", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                 "tpair", "\[LeftDoubleBracket]", "2", 
+                  "\[RightDoubleBracket]"}], "-", 
+                 RowBox[{"q", "*", 
+                  RowBox[{
+                  "tpair", "\[LeftDoubleBracket]", "1", 
+                   "\[RightDoubleBracket]"}]}]}], ",", 
+                RowBox[{
+                "tpair", "\[LeftDoubleBracket]", "1", 
+                 "\[RightDoubleBracket]"}]}], "}"}]}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Assert", "[", 
+           RowBox[{
+            RowBox[{
+            "rpair", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], "==",
+             "1"}], "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Assert", "[", 
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"n", "*", 
+                RowBox[{
+                "spair", "\[LeftDoubleBracket]", "2", 
+                 "\[RightDoubleBracket]"}]}], ")"}], ",", "p"}], "]"}], "==", 
+            "1"}], "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{
+            "spair", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+            ",", "p"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+      RowBox[{
+       RowBox[{"eccAdd", "[", 
+        RowBox[{"p1_", ",", "p2_", ",", "a_", ",", "b_", ",", "order_"}], 
+        "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
          RowBox[{"{", 
-          RowBox[{"\"\<Terms involved: \>\"", ",", 
-           RowBox[{"Dynamic", "[", 
+          RowBox[{
+          "x1", ",", "x2", ",", "x3", ",", "y1", ",", "y2", ",", "y3", ",", 
+           "m"}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"x1", ",", "y1"}], "}"}], "=", "p1"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"x2", ",", "y2"}], "}"}], "=", "p2"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"x1", "\[Equal]", "\[Infinity]"}], ",", 
+            RowBox[{"Return", "[", "p2", "]"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"x2", "\[Equal]", "\[Infinity]"}], ",", 
+            RowBox[{"Return", "[", "p1", "]"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
             RowBox[{
-             RowBox[{"eccMult", "[", 
-              RowBox[{"k", ",", 
-               RowBox[{"{", 
-                RowBox[{"x", ",", "y"}], "}"}], ",", "a", ",", "b", ",", 
-               "p"}], "]"}], "\[LeftDoubleBracket]", "1", 
-             "\[RightDoubleBracket]"}], "]"}]}], "}"}], "]"}]}], "}"}], ",", 
-      "Center"}], "]"}]}], "]"}], "]"}]], "Input",
+             RowBox[{"x1", "\[Equal]", "x2"}], "&&", 
+             RowBox[{
+              RowBox[{"Mod", "[", 
+               RowBox[{
+                RowBox[{"y1", "+", "y2"}], ",", "order"}], "]"}], "\[Equal]", 
+              "0"}]}], ",", 
+            RowBox[{"Return", "[", 
+             RowBox[{"{", 
+              RowBox[{"\[Infinity]", ",", "\[Infinity]"}], "}"}], "]"}]}], 
+           "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"p1", "\[Equal]", "p2"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"y1", "\[Equal]", "0"}], ",", 
+               RowBox[{"Return", "[", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", "0"}], "}"}], "]"}]}], "]"}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"m", "=", 
+              RowBox[{"Mod", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"3", 
+                    SuperscriptBox["x1", "2"]}], "+", "a"}], ")"}], "*", 
+                 RowBox[{"inverseModulo", "[", 
+                  RowBox[{
+                   RowBox[{"2", "y1"}], ",", "order"}], "]"}]}], ",", 
+                "order"}], "]"}]}]}], "\[IndentingNewLine]", ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"m", "=", 
+              RowBox[{"Mod", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"y2", "-", "y1"}], ")"}], "*", 
+                 RowBox[{"inverseModulo", "[", 
+                  RowBox[{
+                   RowBox[{"x2", "-", "x1"}], ",", "order"}], "]"}]}], ",", 
+                "order"}], "]"}]}], ";"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"x3", "=", 
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{
+              SuperscriptBox["m", "2"], "-", "x1", "-", "x2"}], ",", 
+             "order"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"y3", "=", 
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"m", 
+               RowBox[{"(", 
+                RowBox[{"x1", "-", "x3"}], ")"}]}], "-", "y1"}], ",", 
+             "order"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"x3", ",", "y3"}], "}"}]}]}], "\[IndentingNewLine]", 
+        "]"}]}], ";", 
+      RowBox[{
+       RowBox[{"eccMult", "[", 
+        RowBox[{"k_", ",", "P_", ",", "a_", ",", "b_", ",", "order_"}], "]"}],
+        ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"xlist", "=", 
+            RowBox[{"{", "}"}]}], ",", "x1", ",", "x2", ",", 
+           RowBox[{"ktmp", "=", "k"}], ",", 
+           RowBox[{"power", "=", "0"}], ",", 
+           RowBox[{"Q", "=", 
+            RowBox[{"{", 
+             RowBox[{"\[Infinity]", ",", "\[Infinity]"}], "}"}]}], ",", 
+           RowBox[{"Ptmp", "=", "P"}], ",", 
+           RowBox[{"adstring", "=", "\"\<\>\""}]}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"x1", ",", "x2"}], "}"}], "=", "P"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"While", "[", 
+           RowBox[{
+            RowBox[{"ktmp", ">", "0"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"OddQ", "[", "ktmp", "]"}], ",", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"xlist", "=", 
+                 RowBox[{"Append", "[", 
+                  RowBox[{"xlist", ",", 
+                   RowBox[{
+                    SuperscriptBox["\"\<2\>\"", "power"], "\"\<P\>\""}]}], 
+                  "]"}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"Q", "=", 
+                 RowBox[{"eccAdd", "[", 
+                  RowBox[{
+                  "Q", ",", "Ptmp", ",", "a", ",", "b", ",", "order"}], 
+                  "]"}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"adstring", "=", 
+                 RowBox[{"adstring", "<>", "\"\<A\>\""}]}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"power", "+=", "1"}], ";", "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"ktmp", ">", "1"}], ",", 
+               RowBox[{
+                RowBox[{"Ptmp", "=", 
+                 RowBox[{"eccAdd", "[", 
+                  RowBox[{
+                  "Ptmp", ",", "Ptmp", ",", "a", ",", "b", ",", "order"}], 
+                  "]"}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"adstring", "=", 
+                 RowBox[{"adstring", "<>", "\"\<D\>\""}]}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"ktmp", "=", 
+              RowBox[{"Floor", "[", 
+               RowBox[{"ktmp", "/", "2"}], "]"}]}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"xlist", ",", "adstring", ",", "Q"}], "}"}]}]}], 
+        "\[IndentingNewLine]", "]"}]}]}], ")"}]}]}], "]"}]], "Input",
+ InitializationCell->True,
  CellChangeTimes->{{3.700390312702499*^9, 3.7003904632950664`*^9}, {
-  3.700390510246939*^9, 3.700390526186202*^9}, {3.700425323582782*^9, 
-  3.700425327877554*^9}},ExpressionUUID->"46e92ad4-79d7-47eb-9088-\
+   3.700390510246939*^9, 3.700390526186202*^9}, {3.700425323582782*^9, 
+   3.700425327877554*^9}, {3.700647691206246*^9, 3.700647732051372*^9}, {
+   3.7006478481679688`*^9, 3.7006483092502365`*^9}, {3.7006483531342897`*^9, 
+   3.7006483731928606`*^9}, {3.700730165634704*^9, 3.7007301705574923`*^9}, {
+   3.700730631801368*^9, 3.7007306370055094`*^9}, {3.700731122650752*^9, 
+   3.700731141191581*^9}, 3.7007407207744045`*^9, {3.700740836639518*^9, 
+   3.7007408806778975`*^9}, {3.700740926502617*^9, 3.700740933517458*^9}, {
+   3.7007409829480333`*^9, 3.700741029209173*^9}, {3.7007411172403326`*^9, 
+   3.700741126907997*^9}, {3.700741161862262*^9, 3.7007412485873747`*^9}, {
+   3.700741468534253*^9, 
+   3.700741489082517*^9}},ExpressionUUID->"46e92ad4-79d7-47eb-9088-\
 4f0f11809f6d"],
 
 Cell[BoxData[
- PanelBox[
-  DynamicModuleBox[{$CellContext`x$$ = 2, $CellContext`y$$ = 
-   3, $CellContext`k$$ = 67, $CellContext`a$$ = 6, $CellContext`b$$ = 
-   7, $CellContext`p$$ = 7}, 
-   TagBox[GridBox[{
-      {"\<\"Point Multiplication on Ep(a,b)\"\>"},
-      {
-       TagBox[GridBox[{
-          {"\<\"k=\"\>", 
-           InputFieldBox[Dynamic[$CellContext`k$$], Number]},
-          {"\<\"x=\"\>", 
-           InputFieldBox[Dynamic[$CellContext`x$$], Number]},
-          {"\<\"y=\"\>", 
-           InputFieldBox[Dynamic[$CellContext`y$$], Number]},
-          {"\<\" a=\"\>", 
-           InputFieldBox[Dynamic[$CellContext`a$$], Number]},
-          {"\<\" b=\"\>", 
-           InputFieldBox[Dynamic[$CellContext`b$$], Number]},
-          {"\<\" p=\"\>", 
-           InputFieldBox[Dynamic[$CellContext`p$$], Number]}
-         },
-         AutoDelete->False,
-         GridBoxItemSize->{
-          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-        "Grid"]},
-      {
-       TemplateBox[{"\"k*{x,y} = \"",DynamicBox[
-          ToBoxes[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 2, $CellContext`b$$ = 
+    3, $CellContext`k$$ = 3, $CellContext`p$$ = 263, $CellContext`x1$$ = 
+    200, $CellContext`y1$$ = 39, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`k$$], 3, "k="}}, {{
+       Hold[$CellContext`x1$$], 200, "x="}}, {{
+       Hold[$CellContext`y1$$], 39, "y="}}, {{
+       Hold[$CellContext`a$$], 2, "a="}}, {{
+       Hold[$CellContext`b$$], 3, "b="}}, {{
+       Hold[$CellContext`p$$], 263, "p="}}, {
+      Hold[
+       Column[{
+         Style["Point Multiplication", FontSize -> 14, FontWeight -> Bold], 
+         "Find value of \!\(\*SubscriptBox[\(P\), \
+\(2\)]\)=k*\!\(\*SubscriptBox[\(P\), \(1\)]\) on Ep(a,b)", 
+         "\!\(\*SuperscriptBox[\(y\), \(2\)]\)=\!\(\*SuperscriptBox[\(x\), \
+\(3\)]\)+ax+b mod p", 
+         Style[
+         "Please ensure that 4\!\(\*SuperscriptBox[\(a\), \(3\)]\) + \
+27\!\(\*SuperscriptBox[\(b\), \(2\)]\) mod p \[NotEqual] 0", FontSize -> 8], 
+         "", "Input value for k", 
+         Row[{
+           Manipulate`Place[1]}], "", 
+         "Input values for x,y-coordinates of \!\(\*SubscriptBox[\(P\), \
+\(1\)]\)", 
+         Row[{
+           Manipulate`Place[2], "     ", 
+           Manipulate`Place[3]}], 
+         Dynamic[
+          $CellContext`checkPoint[{$CellContext`x1$$, $CellContext`y1$$}, \
+$CellContext`a$$, $CellContext`b$$, $CellContext`p$$]], 
+         "Input values for curve parameters", 
+         Row[{
+           Manipulate`Place[4], "   ", 
+           Manipulate`Place[5], "   ", 
+           Manipulate`Place[6]}], 
+         Dynamic[
+          $CellContext`checkAB[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`p$$]], "Result"}, Center]], Manipulate`Dump`ThisIsNotAControl}}, 
+    Typeset`size$$ = {520., {110., 121.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 2, $CellContext`b$$ = 
+        3, $CellContext`k$$ = 3, $CellContext`p$$ = 263, $CellContext`x1$$ = 
+        200, $CellContext`y1$$ = 39}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Column[{
+         Row[{"\!\(\*SubscriptBox[\(P\), \(2\)]\) = ", 
+           Style[
+            Dynamic[
+             Part[
+              $CellContext`eccMult[$CellContext`k$$, {$CellContext`x1$$, \
+$CellContext`y1$$}, $CellContext`a$$, $CellContext`b$$, $CellContext`p$$], 
+              3]], FontColor -> Blue]}], "", 
+         Style[
+         "order of operations for point multiplication:", FontSize -> 11], 
+         Style[
+          Dynamic[
            Part[
-            $CellContext`eccMult[$CellContext`k$$, {$CellContext`x$$, \
-$CellContext`y$$}, $CellContext`a$$, $CellContext`b$$, $CellContext`p$$], 3], 
-           StandardForm]]},
-        "RowDefault"]},
-      {
-       TemplateBox[{"\"Order of operation: \"",DynamicBox[
-          ToBoxes[
+            $CellContext`eccMult[$CellContext`k$$, {$CellContext`x1$$, \
+$CellContext`y1$$}, $CellContext`a$$, $CellContext`b$$, $CellContext`p$$], 
+            2]], FontColor -> Blue], 
+         Style[
+         "A for an addition operation, D for a doubling operation", FontSize -> 
+          8], "", "Terms involved in point multiplication: ", 
+         Style[
+          Dynamic[
            Part[
-            $CellContext`eccMult[$CellContext`k$$, {$CellContext`x$$, \
-$CellContext`y$$}, $CellContext`a$$, $CellContext`b$$, $CellContext`p$$], 2], 
-           StandardForm]]},
-        "RowDefault"]},
-      {
-       TemplateBox[{"\"Terms involved: \"",DynamicBox[
-          ToBoxes[
-           Part[
-            $CellContext`eccMult[$CellContext`k$$, {$CellContext`x$$, \
-$CellContext`y$$}, $CellContext`a$$, $CellContext`b$$, $CellContext`p$$], 1], 
-           StandardForm]]},
-        "RowDefault"]}
-     },
-     DefaultBaseStyle->"Column",
-     GridBoxAlignment->{"Columns" -> {{Center}}},
-     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-    "Column"],
-   DynamicModuleValues:>{}]]], "Output",
+            $CellContext`eccMult[$CellContext`k$$, {$CellContext`x1$$, \
+$CellContext`y1$$}, $CellContext`a$$, $CellContext`b$$, $CellContext`p$$], 
+            1]], FontColor -> Blue]}, Center], 
+      "Specifications" :> {{{$CellContext`k$$, 3, "k="}, FieldSize -> Tiny, 
+         ControlPlacement -> 1}, {{$CellContext`x1$$, 200, "x="}, FieldSize -> 
+         Tiny, ControlPlacement -> 2}, {{$CellContext`y1$$, 39, "y="}, 
+         FieldSize -> Tiny, ControlPlacement -> 
+         3}, {{$CellContext`a$$, 2, "a="}, FieldSize -> Tiny, 
+         ControlPlacement -> 4}, {{$CellContext`b$$, 3, "b="}, FieldSize -> 
+         Tiny, ControlPlacement -> 5}, {{$CellContext`p$$, 263, "p="}, 
+         FieldSize -> Tiny, ControlPlacement -> 6}, 
+        Column[{
+          Style["Point Multiplication", FontSize -> 14, FontWeight -> Bold], 
+          "Find value of \!\(\*SubscriptBox[\(P\), \
+\(2\)]\)=k*\!\(\*SubscriptBox[\(P\), \(1\)]\) on Ep(a,b)", 
+          "\!\(\*SuperscriptBox[\(y\), \(2\)]\)=\!\(\*SuperscriptBox[\(x\), \
+\(3\)]\)+ax+b mod p", 
+          Style[
+          "Please ensure that 4\!\(\*SuperscriptBox[\(a\), \(3\)]\) + \
+27\!\(\*SuperscriptBox[\(b\), \(2\)]\) mod p \[NotEqual] 0", FontSize -> 8], 
+          "", "Input value for k", 
+          Row[{
+            Manipulate`Place[1]}], "", 
+          "Input values for x,y-coordinates of \!\(\*SubscriptBox[\(P\), \
+\(1\)]\)", 
+          Row[{
+            Manipulate`Place[2], "     ", 
+            Manipulate`Place[3]}], 
+          Dynamic[
+           $CellContext`checkPoint[{$CellContext`x1$$, $CellContext`y1$$}, \
+$CellContext`a$$, $CellContext`b$$, $CellContext`p$$]], 
+          "Input values for curve parameters", 
+          Row[{
+            Manipulate`Place[4], "   ", 
+            Manipulate`Place[5], "   ", 
+            Manipulate`Place[6]}], 
+          Dynamic[
+           $CellContext`checkAB[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`p$$]], "Result"}, Center]}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{602., {401., 412.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>(($CellContext`checkAB[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`b, 
+          Blank[]], 
+         Pattern[$CellContext`p, 
+          Blank[]]] := Module[{}, 
+         If[
+         Mod[4 $CellContext`a^3 + 27 $CellContext`b^2, $CellContext`p] != 0, 
+          Return[""], 
+          Return[
+           Style[
+           "4\!\(\*SuperscriptBox[\(a\), \(3\)]\) + \
+27\!\(\*SuperscriptBox[\(b\), \(2\)]\) mod p cannot be 0", FontColor -> Red, 
+            FontWeight -> Bold]]]]; $CellContext`checkPoint[
+         Pattern[$CellContext`P, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`b, 
+          Blank[]], 
+         Pattern[$CellContext`p, 
+          Blank[]]] := 
+       Module[{$CellContext`x, $CellContext`y}, {$CellContext`x, \
+$CellContext`y} = $CellContext`P; 
+         If[Mod[$CellContext`x^3 + $CellContext`a $CellContext`x + \
+$CellContext`b - $CellContext`y^2, $CellContext`p] == 0, 
+           Return[""], 
+           Return[
+            Style[
+            "Point not on curve", FontColor -> Red, FontWeight -> Bold]]]; 
+         Null]; $CellContext`inverseModulo[
+         Pattern[$CellContext`n0, 
+          Blank[]], 
+         Pattern[$CellContext`p0, 
+          Blank[]]] := 
+       Module[{$CellContext`q, $CellContext`spair = {0, 
+           0}, $CellContext`tpair = {0, 0}, $CellContext`rpair = {0, 
+           0}, $CellContext`ans, $CellContext`n = $CellContext`n0, \
+$CellContext`p = $CellContext`p0}, Assert[$CellContext`n != 0]; 
+         If[$CellContext`n < 
+           0, $CellContext`ans = $CellContext`p - \
+$CellContext`inverseModulo[-$CellContext`n, $CellContext`p]]; \
+$CellContext`rpair = {$CellContext`p, $CellContext`n}; $CellContext`spair = {
+           0, 1}; $CellContext`tpair = {1, 0}; 
+         While[Part[$CellContext`rpair, 1] != 
+           0, $CellContext`q = 
+            Floor[Part[$CellContext`rpair, 2]/
+              Part[$CellContext`rpair, 1]]; $CellContext`rpair = {
+             Part[$CellContext`rpair, 2] - $CellContext`q 
+              Part[$CellContext`rpair, 1], 
+              Part[$CellContext`rpair, 1]}; $CellContext`spair = {
+             Part[$CellContext`spair, 2] - $CellContext`q 
+              Part[$CellContext`spair, 1], 
+              Part[$CellContext`spair, 1]}; $CellContext`tpair = {
+             Part[$CellContext`tpair, 2] - $CellContext`q 
+              Part[$CellContext`tpair, 1], 
+              Part[$CellContext`tpair, 1]}]; 
+         Assert[Part[$CellContext`rpair, 2] == 1]; 
+         Assert[
+          Mod[$CellContext`n Part[$CellContext`spair, 2], $CellContext`p] == 
+           1]; Mod[
+           Part[$CellContext`spair, 2], $CellContext`p]]; $CellContext`eccAdd[
+         Pattern[$CellContext`p1, 
+          Blank[]], 
+         Pattern[$CellContext`p2, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`b, 
+          Blank[]], 
+         Pattern[$CellContext`order, 
+          Blank[]]] := 
+       Module[{$CellContext`x1, $CellContext`x2, $CellContext`x3, \
+$CellContext`y1, $CellContext`y2, $CellContext`y3, $CellContext`m}, \
+{$CellContext`x1, $CellContext`y1} = $CellContext`p1; {$CellContext`x2, \
+$CellContext`y2} = $CellContext`p2; If[$CellContext`x1 == Infinity, 
+           Return[$CellContext`p2]]; If[$CellContext`x2 == Infinity, 
+           Return[$CellContext`p1]]; If[
+           
+           And[$CellContext`x1 == $CellContext`x2, 
+            Mod[$CellContext`y1 + $CellContext`y2, $CellContext`order] == 0], 
+           Return[{Infinity, Infinity}]]; 
+         If[$CellContext`p1 == $CellContext`p2, If[$CellContext`y1 == 0, 
+             Return[{0, 0}]]; $CellContext`m = 
+            Mod[(3 $CellContext`x1^2 + $CellContext`a) \
+$CellContext`inverseModulo[
+               2 $CellContext`y1, $CellContext`order], $CellContext`order], \
+$CellContext`m = 
+            Mod[($CellContext`y2 - $CellContext`y1) \
+$CellContext`inverseModulo[$CellContext`x2 - $CellContext`x1, \
+$CellContext`order], $CellContext`order]; Null]; $CellContext`x3 = 
+          Mod[$CellContext`m^2 - $CellContext`x1 - $CellContext`x2, \
+$CellContext`order]; $CellContext`y3 = 
+          Mod[$CellContext`m ($CellContext`x1 - $CellContext`x3) - \
+$CellContext`y1, $CellContext`order]; {$CellContext`x3, $CellContext`y3}]; \
+$CellContext`eccMult[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`P, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`b, 
+          Blank[]], 
+         Pattern[$CellContext`order, 
+          Blank[]]] := 
+       Module[{$CellContext`xlist = {}, $CellContext`x1, $CellContext`x2, \
+$CellContext`ktmp = $CellContext`k, $CellContext`power = 
+          0, $CellContext`Q = {
+           Infinity, 
+            Infinity}, $CellContext`Ptmp = $CellContext`P, \
+$CellContext`adstring = 
+          ""}, {$CellContext`x1, $CellContext`x2} = $CellContext`P; 
+         While[$CellContext`ktmp > 0, If[
+             
+             OddQ[$CellContext`ktmp], $CellContext`xlist = 
+              Append[$CellContext`xlist, "2"^$CellContext`power 
+                "P"]; $CellContext`Q = $CellContext`eccAdd[$CellContext`Q, \
+$CellContext`Ptmp, $CellContext`a, $CellContext`b, $CellContext`order]; \
+$CellContext`adstring = StringJoin[$CellContext`adstring, "A"]]; 
+           AddTo[$CellContext`power, 1]; 
+           If[$CellContext`ktmp > 
+             1, $CellContext`Ptmp = $CellContext`eccAdd[$CellContext`Ptmp, \
+$CellContext`Ptmp, $CellContext`a, $CellContext`b, $CellContext`order]; \
+$CellContext`adstring = 
+              StringJoin[$CellContext`adstring, "D"]]; $CellContext`ktmp = 
+            Floor[$CellContext`ktmp/
+              2]]; {$CellContext`xlist, $CellContext`adstring, \
+$CellContext`Q}]); Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
  CellChangeTimes->{{3.700390356930256*^9, 3.700390412628046*^9}, 
    3.700390527327338*^9, 3.700425262765542*^9, 3.7004253285580397`*^9, 
-   3.7004688352260084`*^9},ExpressionUUID->"eb3185ef-ee74-428c-aad7-\
-733d38803fe9"]
+   3.7004688352260084`*^9, 3.7006479119106693`*^9, 3.700647957864515*^9, {
+   3.7006481396930723`*^9, 3.7006481503501043`*^9}, {3.700648192562249*^9, 
+   3.7006482217076206`*^9}, {3.7006482659688797`*^9, 3.7006482773506284`*^9}, 
+   3.7006483105415*^9, {3.7006483605305014`*^9, 3.7006483737953405`*^9}, 
+   3.70072985573204*^9, 3.7007301710449333`*^9, 3.7007311416341763`*^9, 
+   3.700733187585063*^9, 3.700733441539081*^9, 3.7007337105526705`*^9, 
+   3.7007339598652596`*^9, 3.700734069574767*^9, 3.7007345759838457`*^9, 
+   3.700734676727812*^9, 3.7007375082472463`*^9, 3.700740725384256*^9, 
+   3.7007410328674116`*^9, 3.7007411281134405`*^9, 3.7007411629346533`*^9, {
+   3.700741201452686*^9, 3.700741249690047*^9}, 
+   3.7007414898622828`*^9},ExpressionUUID->"c7b4512c-a387-45f9-a663-\
+ec6acc866a0b"]
+}, Open  ]]
 }, Open  ]]
 },
-WindowSize->{872, 815},
-WindowMargins->{{Automatic, 81}, {95, Automatic}},
+WindowSize->{872, 814},
+WindowMargins->{{Automatic, 222}, {Automatic, 53}},
+InitializationCell->True,
 Magnification:>1.8 Inherited,
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (March 13, 2017)",
 StyleDefinitions->"Default.nb"
@@ -678,24 +1570,30 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[1464, 33, 13697, 323, 1863, "Input", "ExpressionUUID" -> \
-"79371eb9-da00-4832-8fca-9e3ec34dde9b"],
 Cell[CellGroupData[{
-Cell[15186, 360, 3664, 85, 463, "Input", "ExpressionUUID" -> \
-"1a1f4f8b-d09a-4811-9c43-0cd5d8ae5d12"],
-Cell[18853, 447, 2529, 55, 432, "Output", "ExpressionUUID" -> \
-"aa078765-d7f2-4f3a-8a36-29c6a9e473cf"]
+Cell[1486, 35, 136, 3, 100, "Subtitle", "ExpressionUUID" -> \
+"01b65336-0ccb-4914-a3d7-2f12eb269604"],
+Cell[CellGroupData[{
+Cell[1647, 42, 18837, 466, 34, "Input", "ExpressionUUID" -> \
+"6dda1e23-f4a4-4c3a-8747-32a3c2a72e45",
+ CellOpen->False],
+Cell[20487, 510, 12035, 260, 638, "Output", "ExpressionUUID" -> \
+"ee190fe8-b522-4bc7-9d93-614bfdf61150"]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21419, 507, 3785, 92, 565, "Input", "ExpressionUUID" -> \
-"4d2a352f-82ec-49d0-a7e2-fb588c31668e"],
-Cell[25207, 601, 2322, 59, 456, "Output", "ExpressionUUID" -> \
-"eb3185ef-ee74-428c-aad7-733d38803fe9"]
+Cell[32571, 776, 144, 3, 100, "Subtitle", "ExpressionUUID" -> \
+"292f5c22-748c-4fc8-b1ac-f2f46f4f92ba"],
+Cell[CellGroupData[{
+Cell[32740, 783, 20264, 494, 3911, "Input", "ExpressionUUID" -> \
+"46e92ad4-79d7-47eb-9088-4f0f11809f6d",
+ InitializationCell->True],
+Cell[53007, 1279, 12754, 271, 842, "Output", "ExpressionUUID" -> \
+"c7b4512c-a387-45f9-a663-ec6acc866a0b"]
+}, Open  ]]
 }, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)
-
-(* NotebookSignature CwTOmABQLom@sCg2Z3OXV2ZA *)
+(* NotebookSignature NuTRHcrx8Te88DKvmsne8orG *)
