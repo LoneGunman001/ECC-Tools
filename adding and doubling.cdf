@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1064,         20]
-NotebookDataLength[     24410,        622]
-NotebookOptionsPosition[     23953,        592]
-NotebookOutlinePosition[     24327,        608]
-CellTagsIndexPosition[     24284,        605]
+NotebookDataLength[     24442,        622]
+NotebookOptionsPosition[     23985,        592]
+NotebookOutlinePosition[     24359,        608]
+CellTagsIndexPosition[     24316,        605]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -239,14 +239,14 @@ Cell[BoxData[
       Hold[$CellContext`x1$$], -1.2, -0.38}, {
       Hold[$CellContext`x2$$], -1.2, -0.38}}, Typeset`size$$ = {
     522.5, {299., 259.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-    Typeset`skipInitDone$$ = False, $CellContext`x1$507632$$ = 
-    0, $CellContext`x2$507633$$ = 0}, 
+    Typeset`skipInitDone$$ = False, $CellContext`x1$2169$$ = 
+    0, $CellContext`x2$2170$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`x1$$ = -1.2, $CellContext`x2$$ = -1.2}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`x1$$, $CellContext`x1$507632$$, 0], 
-        Hold[$CellContext`x2$$, $CellContext`x2$507633$$, 0]}, 
+        Hold[$CellContext`x1$$, $CellContext`x1$2169$$, 0], 
+        Hold[$CellContext`x2$$, $CellContext`x2$2170$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -293,7 +293,7 @@ $CellContext`pt1 = {-1.2, 0.9338094023943}, $CellContext`EcY[{
          Pattern[$CellContext`x, 
           Blank[]]] := 
        Sqrt[$CellContext`x^3 + $CellContext`a $CellContext`x + \
-$CellContext`b], $CellContext`pt = {-0.475, 0}, $CellContext`pt2 = {-1.2, 
+$CellContext`b], $CellContext`pt = {-1.2, 0}, $CellContext`pt2 = {-1.2, 
         0.9338094023943}, $CellContext`PlotEcAdd[
          Pattern[$CellContext`pt1, 
           Blank[]], 
@@ -359,9 +359,9 @@ $CellContext`m ($CellContext`x1 - $CellContext`x3) - $CellContext`y1; \
  CellChangeTimes->{
   3.7007424563636036`*^9, 3.7007425096618*^9, {3.70074259473238*^9, 
    3.700742608679762*^9}, 3.700742659765626*^9, 3.7007426980521727`*^9, 
-   3.700742787503729*^9, 
-   3.700742838055229*^9},ExpressionUUID->"d5f57c4a-d41f-40df-a703-\
-1f4314626b56"]
+   3.700742787503729*^9, 3.700742838055229*^9, 
+   3.7007450137146835`*^9},ExpressionUUID->"379f204e-f968-4546-ac3c-\
+44bcd9713e3e"]
 }, Open  ]]
 }, Open  ]],
 
@@ -460,11 +460,11 @@ Cell[BoxData[
     "\"untitled\"", Typeset`specs$$ = {{
       Hold[$CellContext`x1$$], -1.2, -0.38}}, Typeset`size$$ = {
     500., {299., 259.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-    Typeset`skipInitDone$$ = False, $CellContext`x1$507777$$ = 0}, 
+    Typeset`skipInitDone$$ = False, $CellContext`x1$2322$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, "Variables" :> {$CellContext`x1$$ = -1.2}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`x1$$, $CellContext`x1$507777$$, 0]}, 
+        Hold[$CellContext`x1$$, $CellContext`x1$2322$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -573,9 +573,9 @@ $CellContext`m ($CellContext`x1 - $CellContext`x3) - $CellContext`y1; \
    3.7000902714468822`*^9}, 3.700741797095296*^9, {3.700742062472378*^9, 
    3.7007420881494436`*^9}, 3.7007421641428757`*^9, 3.700742456480431*^9, 
    3.700742509781618*^9, 3.700742620612455*^9, 3.700742657843192*^9, 
-   3.700742695353677*^9, 3.700742774598378*^9, 
-   3.7007428381264315`*^9},ExpressionUUID->"99d7ce09-5ef6-43a0-8174-\
-5dedb11ae42b"]
+   3.700742695353677*^9, 3.700742774598378*^9, 3.7007428381264315`*^9, 
+   3.700745013785372*^9},ExpressionUUID->"6a75adb0-e74f-4820-bd4d-\
+afba6fc6c0a5"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -620,25 +620,25 @@ Cell[CellGroupData[{
 Cell[4823, 136, 3689, 93, 20, "Input", "ExpressionUUID" -> \
 "3bc3723f-0e37-45f2-a853-8cb1e31a4016",
  CellOpen->False],
-Cell[8515, 231, 6111, 132, 706, "Output", "ExpressionUUID" -> \
-"d5f57c4a-d41f-40df-a703-1f4314626b56"]
+Cell[8515, 231, 6125, 132, 706, "Output", "ExpressionUUID" -> \
+"379f204e-f968-4546-ac3c-44bcd9713e3e"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14675, 369, 168, 3, 59, "Subtitle", "ExpressionUUID" -> \
+Cell[14689, 369, 168, 3, 59, "Subtitle", "ExpressionUUID" -> \
 "20934827-5d6f-4b94-8d48-6173a34b6eca"],
 Cell[CellGroupData[{
-Cell[14868, 376, 2772, 75, 20, "Input", "ExpressionUUID" -> \
+Cell[14882, 376, 2772, 75, 20, "Input", "ExpressionUUID" -> \
 "b03b9ade-8770-43d1-be6b-0e780364e472",
  CellOpen->False],
-Cell[17643, 453, 5901, 124, 678, "Output", "ExpressionUUID" -> \
-"99d7ce09-5ef6-43a0-8174-5dedb11ae42b"]
+Cell[17657, 453, 5919, 124, 678, "Output", "ExpressionUUID" -> \
+"6a75adb0-e74f-4820-bd4d-afba6fc6c0a5"]
 }, Open  ]],
-Cell[23559, 580, 378, 9, 57, "Input", "ExpressionUUID" -> \
+Cell[23591, 580, 378, 9, 62, "Input", "ExpressionUUID" -> \
 "6323c9d6-833a-4f53-b2a2-47a880c6ce30"]
 }, Open  ]]
 }
 ]
 *)
 
-(* NotebookSignature SxTkPCBR6mSFnA1vZSxdGidI *)
+(* NotebookSignature LxpXIOYPiGL@#C1MhMsng1Xc *)

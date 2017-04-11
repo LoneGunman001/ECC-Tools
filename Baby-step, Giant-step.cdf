@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1064,         20]
-NotebookDataLength[     37868,        916]
-NotebookOptionsPosition[     38015,        901]
-NotebookOutlinePosition[     38535,        922]
-CellTagsIndexPosition[     38492,        919]
+NotebookDataLength[     40784,        986]
+NotebookOptionsPosition[     40933,        971]
+NotebookOutlinePosition[     41451,        992]
+CellTagsIndexPosition[     41408,        989]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -514,8 +514,7 @@ FontWeight->\"Plain\"]\)\>\"", ",", "\"\<\>\"", ",", "\[IndentingNewLine]",
         "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{"BSGS", "[", 
-        RowBox[{"p1_", ",", "p2_", ",", "a_", ",", "b_", ",", "order_"}], 
-        "]"}], ":=", 
+        RowBox[{"p1_", ",", "p2_", ",", "a_", ",", "b_", ",", "p_"}], "]"}], ":=", 
        RowBox[{"Module", "[", 
         RowBox[{
          RowBox[{"{", 
@@ -526,7 +525,8 @@ FontWeight->\"Plain\"]\)\>\"", ",", "\"\<\>\"", ",", "\[IndentingNewLine]",
             RowBox[{"{", 
              RowBox[{"\[Infinity]", ",", "\[Infinity]"}], "}"}]}], ",", 
            RowBox[{"steps", "=", "0"}], ",", "negxP1", ",", "i", ",", 
-           RowBox[{"ans", "=", "0"}]}], "}"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"ans", "=", "0"}], ",", "order"}], "}"}], ",", 
+         "\[IndentingNewLine]", 
          RowBox[{
           RowBox[{
            RowBox[{"{", 
@@ -535,6 +535,10 @@ FontWeight->\"Plain\"]\)\>\"", ",", "\"\<\>\"", ",", "\[IndentingNewLine]",
           RowBox[{
            RowBox[{"{", 
             RowBox[{"x2", ",", "y2"}], "}"}], "=", "p2"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"order", "=", 
+           RowBox[{"findOrder", "[", 
+            RowBox[{"a", ",", "b", ",", "p"}], "]"}]}], ";", 
           "\[IndentingNewLine]", 
           RowBox[{"hashtable", "=", 
            RowBox[{"<|", "|>"}]}], ";", "\[IndentingNewLine]", 
@@ -549,7 +553,7 @@ FontWeight->\"Plain\"]\)\>\"", ",", "\"\<\>\"", ",", "\[IndentingNewLine]",
             RowBox[{
              RowBox[{"tmpP", "=", 
               RowBox[{"eccAdd", "[", 
-               RowBox[{"tmpP", ",", "p1", ",", "a", ",", "b", ",", "order"}], 
+               RowBox[{"tmpP", ",", "p1", ",", "a", ",", "b", ",", "p"}], 
                "]"}]}], ";", "\[IndentingNewLine]", 
              RowBox[{"steps", "++"}], ";", "\[IndentingNewLine]", 
              RowBox[{"hashtable", "=", 
@@ -568,9 +572,9 @@ FontWeight->\"Plain\"]\)\>\"", ",", "\"\<\>\"", ",", "\[IndentingNewLine]",
                RowBox[{"x1", ",", 
                 RowBox[{"Mod", "[", 
                  RowBox[{
-                  RowBox[{"-", "y1"}], ",", "order"}], "]"}]}], "}"}], ",", 
-              "a", ",", "b", ",", "order"}], "]"}], "\[LeftDoubleBracket]", 
-            "3", "\[RightDoubleBracket]"}]}], ";", "\[IndentingNewLine]", 
+                  RowBox[{"-", "y1"}], ",", "p"}], "]"}]}], "}"}], ",", "a", 
+              ",", "b", ",", "p"}], "]"}], "\[LeftDoubleBracket]", "3", 
+            "\[RightDoubleBracket]"}]}], ";", "\[IndentingNewLine]", 
           RowBox[{"While", "[", 
            RowBox[{
             RowBox[{"!", 
@@ -587,8 +591,7 @@ FontWeight->\"Plain\"]\)\>\"", ",", "\"\<\>\"", ",", "\[IndentingNewLine]",
               ";", "\[IndentingNewLine]", 
              RowBox[{"tmpP", "=", 
               RowBox[{"eccAdd", "[", 
-               RowBox[{
-               "tmpP", ",", "negxP1", ",", "a", ",", "b", ",", "order"}], 
+               RowBox[{"tmpP", ",", "negxP1", ",", "a", ",", "b", ",", "p"}], 
                "]"}]}], ";", "\[IndentingNewLine]", 
              RowBox[{"steps", "++"}], ";", "\[IndentingNewLine]", 
              RowBox[{"ans", "+=", "x"}], ";"}]}], "\[IndentingNewLine]", 
@@ -597,8 +600,54 @@ FontWeight->\"Plain\"]\)\>\"", ",", "\"\<\>\"", ",", "\[IndentingNewLine]",
            RowBox[{
             RowBox[{"ans", "+", 
              RowBox[{"hashtable", "[", "tmpP", "]"}]}], ",", "steps"}], 
-           "}"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}], ")"}]}]}], 
-  "]"}]], "Input",ExpressionUUID->"3ad84b48-d91e-4fc4-9748-4ee8a230fe2b"],
+           "}"}]}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+      RowBox[{
+       RowBox[{"findOrder", "[", 
+        RowBox[{"a_", ",", "b_", ",", "p_"}], "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"x", ",", "y", ",", 
+           RowBox[{"points", "=", 
+            RowBox[{"{", "}"}]}]}], "}"}], ",", 
+         RowBox[{
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"x", "=", "0"}], ",", 
+            RowBox[{"x", "<", "p"}], ",", 
+            RowBox[{"x", "++"}], ",", 
+            RowBox[{
+             RowBox[{"Catch", "[", 
+              RowBox[{"y", "=", 
+               RowBox[{"PowerMod", "[", 
+                RowBox[{
+                 RowBox[{
+                  SuperscriptBox["x", "3"], "+", 
+                  RowBox[{"a", " ", "x"}], "+", "b"}], ",", 
+                 FractionBox["1", "2"], ",", "p"}], "]"}]}], "]"}], ";", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"IntegerQ", "[", "y", "]"}], ",", 
+               RowBox[{
+                RowBox[{"points", "=", 
+                 RowBox[{"Append", "[", 
+                  RowBox[{"points", ",", 
+                   RowBox[{"{", 
+                    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]}], ";", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"y", "\[NotEqual]", "0"}], ",", 
+                  RowBox[{"points", "=", 
+                   RowBox[{"Append", "[", 
+                    RowBox[{"points", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"x", ",", 
+                    RowBox[{"p", "-", "y"}]}], "}"}]}], "]"}]}]}], "]"}]}]}], 
+              "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Length", "[", "points", "]"}], "+", "1"}]}]}], 
+        "\[IndentingNewLine]", "]"}]}]}], ")"}]}]}], "]"}]], "Input",Expressio\
+nUUID->"3ad84b48-d91e-4fc4-9748-4ee8a230fe2b"],
 
 Cell[BoxData[
  TagBox[
@@ -646,7 +695,7 @@ $CellContext`a$$, $CellContext`b$$, $CellContext`p$$]],
            Manipulate`Place[7]}], 
          Dynamic[
           $CellContext`checkAB[$CellContext`a$$, $CellContext`b$$, \
-$CellContext`p$$]], Null}, Center]], Manipulate`Dump`ThisIsNotAControl}}, 
+$CellContext`p$$]]}, Center]], Manipulate`Dump`ThisIsNotAControl}}, 
     Typeset`size$$ = {232., {17.5, 26.5}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
     DynamicBox[Manipulate`ManipulateBoxes[
@@ -711,8 +760,8 @@ $CellContext`a$$, $CellContext`b$$, $CellContext`p$$]],
             Manipulate`Place[7]}], 
           Dynamic[
            $CellContext`checkAB[$CellContext`a$$, $CellContext`b$$, \
-$CellContext`p$$]], Null}, Center]}, "Options" :> {}, "DefaultOptions" :> {}],
-     ImageSizeCache->{482., {243., 252.}},
+$CellContext`p$$]]}, Center]}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{482., {231., 240.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -853,21 +902,23 @@ $CellContext`Q}]; $CellContext`BSGS[
           Blank[]], 
          Pattern[$CellContext`b, 
           Blank[]], 
-         Pattern[$CellContext`order, 
+         Pattern[$CellContext`p, 
           Blank[]]] := 
        Module[{$CellContext`x1, $CellContext`x2, $CellContext`y1, \
 $CellContext`y2, $CellContext`hashtable, $CellContext`x, $CellContext`tmpP = {
            Infinity, Infinity}, $CellContext`steps = 
           0, $CellContext`negxP1, $CellContext`i, $CellContext`ans = 
-          0}, {$CellContext`x1, $CellContext`y1} = $CellContext`p1; \
-{$CellContext`x2, $CellContext`y2} = $CellContext`p2; $CellContext`hashtable = 
-          Association[]; $CellContext`x = Floor[
+          0, $CellContext`order}, {$CellContext`x1, $CellContext`y1} = \
+$CellContext`p1; {$CellContext`x2, $CellContext`y2} = $CellContext`p2; \
+$CellContext`order = $CellContext`findOrder[$CellContext`a, $CellContext`b, \
+$CellContext`p]; $CellContext`hashtable = Association[]; $CellContext`x = 
+          Floor[
             Sqrt[$CellContext`order]]; 
          For[$CellContext`i = 0, $CellContext`i < $CellContext`x, 
            
            Increment[$CellContext`i], $CellContext`tmpP = \
 $CellContext`eccAdd[$CellContext`tmpP, $CellContext`p1, $CellContext`a, \
-$CellContext`b, $CellContext`order]; 
+$CellContext`b, $CellContext`p]; 
            Increment[$CellContext`steps]; $CellContext`hashtable = 
             Join[$CellContext`hashtable, 
               Association[$CellContext`tmpP -> $CellContext`i + 1]]; 
@@ -875,18 +926,37 @@ $CellContext`b, $CellContext`order];
           Part[
             $CellContext`eccMult[$CellContext`x, {$CellContext`x1, 
               
-              Mod[-$CellContext`y1, $CellContext`order]}, $CellContext`a, \
-$CellContext`b, $CellContext`order], 3]; While[
+              Mod[-$CellContext`y1, $CellContext`p]}, $CellContext`a, \
+$CellContext`b, $CellContext`p], 3]; While[
            Not[
             KeyExistsQ[$CellContext`hashtable, $CellContext`tmpP]], 
            If[$CellContext`steps > 2 $CellContext`x + 1, 
              Return[
              "Cannot find k"]]; $CellContext`tmpP = \
 $CellContext`eccAdd[$CellContext`tmpP, $CellContext`negxP1, $CellContext`a, \
-$CellContext`b, $CellContext`order]; Increment[$CellContext`steps]; 
+$CellContext`b, $CellContext`p]; Increment[$CellContext`steps]; 
            AddTo[$CellContext`ans, $CellContext`x]; 
            Null]; {$CellContext`ans + \
-$CellContext`hashtable[$CellContext`tmpP], $CellContext`steps}]; Null); 
+$CellContext`hashtable[$CellContext`tmpP], $CellContext`steps}]; \
+$CellContext`findOrder[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`b, 
+          Blank[]], 
+         Pattern[$CellContext`p, 
+          Blank[]]] := 
+       Module[{$CellContext`x, $CellContext`y, $CellContext`points = {}}, 
+         For[$CellContext`x = 0, $CellContext`x < $CellContext`p, 
+           Increment[$CellContext`x], 
+           Catch[$CellContext`y = 
+             PowerMod[$CellContext`x^3 + $CellContext`a $CellContext`x + \
+$CellContext`b, 1/2, $CellContext`p]]; If[
+             
+             IntegerQ[$CellContext`y], $CellContext`points = 
+              Append[$CellContext`points, {$CellContext`x, $CellContext`y}]; 
+             If[$CellContext`y != 0, $CellContext`points = 
+               Append[$CellContext`points, {$CellContext`x, $CellContext`p - \
+$CellContext`y}]]]]; Length[$CellContext`points] + 1]); 
      Typeset`initDone$$ = True),
     SynchronousInitialization->True,
     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
@@ -894,13 +964,13 @@ $CellContext`hashtable[$CellContext`tmpP], $CellContext`steps}]; Null);
     UntrackedVariables:>{Typeset`size$$}], "Manipulate",
    Deployed->True,
    StripOnInput->False],
-  Manipulate`InterpretManipulate[1]]], "Output",ExpressionUUID->"43d44e5b-\
-fa21-49f5-93a1-c3ca3dfd0781"]
+  Manipulate`InterpretManipulate[1]]], "Output",ExpressionUUID->"709f19c1-\
+0db7-4fc8-b2ac-8362155b2461"]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1012, 825},
-WindowMargins->{{Automatic, -1769}, {37, Automatic}},
+WindowSize->{1012, 824},
+WindowMargins->{{-50, Automatic}, {64, Automatic}},
 Visible->True,
 ScrollingOptions->{"VerticalScrollRange"->Fit},
 ShowCellBracket->Automatic,
@@ -925,14 +995,14 @@ Cell[CellGroupData[{
 Cell[1486, 35, 103, 0, 84, "Subtitle", "ExpressionUUID" -> \
 "4bec2e27-03ad-4672-8f89-abbebb18a082"],
 Cell[CellGroupData[{
-Cell[1614, 39, 22592, 561, 3121, "Input", "ExpressionUUID" -> \
+Cell[1614, 39, 24555, 610, 3418, "Input", "ExpressionUUID" -> \
 "3ad84b48-d91e-4fc4-9748-4ee8a230fe2b"],
-Cell[24209, 602, 13778, 295, 520, "Output", "ExpressionUUID" -> \
-"43d44e5b-fa21-49f5-93a1-c3ca3dfd0781"]
+Cell[26172, 651, 14733, 316, 496, "Output", "ExpressionUUID" -> \
+"709f19c1-0db7-4fc8-b2ac-8362155b2461"]
 }, Open  ]]
 }, Open  ]]
 }
 ]
 *)
 
-(* NotebookSignature jv0l0eNE29erWCwnO6p7hgrA *)
+(* NotebookSignature vx0kO9gKaj0tsAwQHO76ldfm *)

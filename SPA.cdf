@@ -23,161 +23,300 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1064,         20]
-NotebookDataLength[      6937,        188]
-NotebookOptionsPosition[      7168,        178]
-NotebookOutlinePosition[      7542,        194]
-CellTagsIndexPosition[      7499,        191]
+NotebookDataLength[     13471,        327]
+NotebookOptionsPosition[     13767,        317]
+NotebookOutlinePosition[     14141,        333]
+CellTagsIndexPosition[     14098,        330]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[
- RowBox[{
-  RowBox[{"processOrder", "[", "s0_", "]"}], ":=", 
-  RowBox[{"Module", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"s", "=", 
-       RowBox[{"Characters", "[", "s0", "]"}]}], ",", 
-      RowBox[{"k", "=", "0"}], ",", 
-      RowBox[{"powerof2", "=", "2"}]}], "}"}], ",", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"Assert", "[", 
-      RowBox[{"StringMatchQ", "[", 
-       RowBox[{"s0", ",", 
-        RowBox[{"RegularExpression", "[", "\"\<[AD]+\>\"", "]"}]}], "]"}], 
-      "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"While", "[", 
-      RowBox[{
-       RowBox[{"s", "\[NotEqual]", 
-        RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"If", "[", 
-         RowBox[{
-          RowBox[{
-           RowBox[{
-           "s", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
-           "\[Equal]", "\"\<A\>\""}], ",", "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"k", "=", "1"}], ";", 
-           RowBox[{"s", "=", 
-            RowBox[{"Delete", "[", 
-             RowBox[{"s", ",", "1"}], "]"}]}]}], ",", "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"Assert", "[", 
-            RowBox[{
-             RowBox[{"Length", "[", "s", "]"}], ">", "1"}], "]"}], ";", 
-           "\[IndentingNewLine]", 
-           RowBox[{"If", "[", 
-            RowBox[{
-             RowBox[{
-              RowBox[{
-              "s", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
-              "\[Equal]", "\"\<D\>\""}], ",", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"powerof2", "*=", "2"}], ";", "\[IndentingNewLine]", 
-              RowBox[{"s", "=", 
-               RowBox[{"Delete", "[", 
-                RowBox[{"s", ",", "1"}], "]"}]}]}], ",", 
-             "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"k", "+=", "powerof2"}], ";", "\[IndentingNewLine]", 
-              RowBox[{"powerof2", "*=", "2"}], ";", "\[IndentingNewLine]", 
-              RowBox[{"s", "=", 
-               RowBox[{"Delete", "[", 
-                RowBox[{"s", ",", "1"}], "]"}]}], ";", "\[IndentingNewLine]", 
-              RowBox[{"s", "=", 
-               RowBox[{"Delete", "[", 
-                RowBox[{"s", ",", "1"}], "]"}]}]}]}], "]"}]}]}], 
-         "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
-     ";", "\[IndentingNewLine]", "k"}]}], "\[IndentingNewLine]", 
-   "]"}]}]], "Input",
- CellChangeTimes->{{3.7003908673461924`*^9, 3.700390966395625*^9}, {
-  3.7003910361963415`*^9, 3.7003911015049076`*^9}, {3.7003912246314955`*^9, 
-  3.7003913289916778`*^9}, {3.700391494528904*^9, 3.7003917186595592`*^9}, {
-  3.700391939301931*^9, 3.700391943415391*^9}, {3.7003920283926773`*^9, 
-  3.700392057005275*^9}, {3.700392096865711*^9, 
-  3.700392136076545*^9}},ExpressionUUID->"3db45f89-fa4b-440b-b9aa-\
-a9a098d0aa21"],
 
-Cell[BoxData[
- RowBox[{
-  RowBox[{"On", "[", "Assert", "]"}], ";"}]], "Input",ExpressionUUID->\
-"99054cc9-46a4-4f15-98ad-7fd2ec6694ea"],
+Cell[CellGroupData[{
+Cell["Simple Power Analysis Attack", "Subtitle",
+ CellChangeTimes->{{3.7008149246499853`*^9, 
+  3.7008149267724714`*^9}},ExpressionUUID->"4d4be65d-2503-4a23-be16-\
+6271521783d2"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Panel", "[", 
-  RowBox[{"DynamicModule", "[", 
-   RowBox[{
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Row", "[", 
     RowBox[{"{", 
-     RowBox[{"string", "=", "\"\<ADDA\>\""}], "}"}], ",", 
-    RowBox[{"Column", "[", 
-     RowBox[{
-      RowBox[{"{", 
+     RowBox[{"\"\<k = \>\"", ",", 
+      RowBox[{"Style", "[", 
        RowBox[{
-       "\"\<Simple Power Analysis\>\"", ",", 
-        "\"\<Letter A for addition, D for doubling\>\"", ",", 
-        RowBox[{"Grid", "[", 
-         RowBox[{"{", "\[IndentingNewLine]", 
-          RowBox[{"{", 
+        RowBox[{"processOrder", "[", "string", "]"}], ",", 
+        RowBox[{"FontColor", "\[Rule]", "Blue"}]}], "]"}]}], "}"}], "]"}], 
+   ",", 
+   RowBox[{"Column", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<Simple Power Analysis\>\"", ",", 
+         RowBox[{"FontSize", "\[Rule]", "14"}], ",", 
+         RowBox[{"FontWeight", "\[Rule]", "Bold"}]}], "]"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+        "\"\<Press the respective button to input order of operations\>\"", 
+         ",", 
+         RowBox[{"FontColor", "\[Rule]", "Gray"}]}], "]"}], ",", 
+       RowBox[{"Row", "[", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Style", "[", 
            RowBox[{"\"\<Order of operations is \>\"", ",", 
-            RowBox[{"InputField", "[", 
-             RowBox[{
-              RowBox[{"Dynamic", "[", "string", "]"}], ",", "String"}], 
-             "]"}]}], "}"}], "\[IndentingNewLine]", "}"}], "]"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"Row", "[", 
+            RowBox[{"FontSize", "\[Rule]", "14"}]}], "]"}], ",", 
+          RowBox[{"Dynamic", "[", 
+           RowBox[{"Style", "[", 
+            RowBox[{"string", ",", 
+             RowBox[{"FontColor", "\[Rule]", "Blue"}], ",", 
+             RowBox[{"FontSize", "\[Rule]", "14"}]}], "]"}], "]"}]}], "}"}], 
+        "\[IndentingNewLine]", "]"}], ",", 
+       RowBox[{"Dynamic", "[", 
+        RowBox[{"checkString", "[", "string", "]"}], "]"}], ",", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Button", "[", 
+           RowBox[{"\"\<Addition\>\"", ",", 
+            RowBox[{"string", "=", 
+             RowBox[{"StringJoin", "[", 
+              RowBox[{"string", ",", "\"\<A\>\""}], "]"}]}], ",", 
+            RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "]"}], ",", 
+          RowBox[{"Button", "[", 
+           RowBox[{"\"\<Doubling\>\"", ",", 
+            RowBox[{"string", "=", 
+             RowBox[{"StringJoin", "[", 
+              RowBox[{"string", ",", "\"\<D\>\""}], "]"}]}], ",", 
+            RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "]"}], ",", 
+          "\"\<      \>\"", ",", 
+          RowBox[{"Button", "[", 
+           RowBox[{"\"\<Reset\>\"", ",", 
+            RowBox[{"string", "=", "\"\<\>\""}], ",", 
+            RowBox[{"ImageSize", "\[Rule]", "Small"}]}], "]"}]}], "}"}], 
+        "]"}]}], "}"}], ",", "Center"}], "]"}], ",", 
+   RowBox[{"Initialization", "\[RuleDelayed]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"string", "=", "\"\<ADA\>\""}], ";", 
+      RowBox[{
+       RowBox[{"processOrder", "[", "s0_", "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
          RowBox[{"{", 
-          RowBox[{"\"\<k = \>\"", ",", 
-           RowBox[{"Dynamic", "[", 
-            RowBox[{"processOrder", "[", "string", "]"}], "]"}]}], "}"}], 
-         "]"}]}], "}"}], ",", "Center"}], "]"}]}], "]"}], "]"}]], "Input",
- CellChangeTimes->{{3.700391724927745*^9, 3.7003917299942684`*^9}, 
-   3.7003921915298996`*^9, 3.700392253945305*^9, 3.700392286201706*^9, {
-   3.700392341854086*^9, 3.7003924294958153`*^9}, {3.7003924805414715`*^9, 
-   3.7003924869463425`*^9}, {3.7005232471903505`*^9, 
-   3.700523306762243*^9}},ExpressionUUID->"b977c27c-10eb-4a81-95d9-\
-3121ccc5aa4b"],
+          RowBox[{
+           RowBox[{"s", "=", 
+            RowBox[{"Characters", "[", "s0", "]"}]}], ",", 
+           RowBox[{"k", "=", "0"}], ",", 
+           RowBox[{"powerof2", "=", "2"}]}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"While", "[", 
+           RowBox[{
+            RowBox[{"s", "\[NotEqual]", 
+             RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+               "s", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+               "\[Equal]", "\"\<A\>\""}], ",", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"k", "\[Equal]", "0"}], ",", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"k", "=", "1"}], ";", 
+                 RowBox[{"s", "=", 
+                  RowBox[{"Delete", "[", 
+                   RowBox[{"s", ",", "1"}], "]"}]}]}], ",", 
+                RowBox[{"Return", "[", "\[Infinity]", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Length", "[", "s", "]"}], ">", "1"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                   "s", "\[LeftDoubleBracket]", "2", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<D\>\""}], ",",
+                   "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{"powerof2", "*=", "2"}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"s", "=", 
+                    RowBox[{"Delete", "[", 
+                    RowBox[{"s", ",", "1"}], "]"}]}]}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{"k", "+=", "powerof2"}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"powerof2", "*=", "2"}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"s", "=", 
+                    RowBox[{"Delete", "[", 
+                    RowBox[{"s", ",", "1"}], "]"}]}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"s", "=", 
+                    RowBox[{"Delete", "[", 
+                    RowBox[{"s", ",", "1"}], "]"}]}]}]}], 
+                 "\[IndentingNewLine]", "]"}], ",", 
+                RowBox[{"s", "=", 
+                 RowBox[{"Delete", "[", 
+                  RowBox[{"s", ",", "1"}], "]"}]}]}], "]"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", "k"}]}], 
+        "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"checkString", "[", "s_", "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", "}"}], ",", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"StringMatchQ", "[", 
+            RowBox[{"s", ",", "\"\<*AA*\>\""}], "]"}], ",", 
+           RowBox[{"Return", "[", 
+            RowBox[{"Style", "[", 
+             RowBox[{
+             "\"\<There cannot be 2 consequtive addition operations\>\"", ",", 
+              RowBox[{"FontColor", "\[Rule]", "Red"}], ",", 
+              RowBox[{"FontSize", "\[Rule]", "8"}]}], "]"}], "]"}], ",", 
+           RowBox[{"Return", "[", "\"\<\>\"", "]"}]}], "]"}]}], "]"}]}]}], 
+     ")"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.70081340319759*^9, 3.7008134393721266`*^9}, {
+  3.700813472592081*^9, 3.700813479185003*^9}, {3.7008136084743385`*^9, 
+  3.700813660566298*^9}, {3.700813711532585*^9, 3.7008139489750757`*^9}, {
+  3.7008140789363365`*^9, 3.700814090388341*^9}, {3.700814136530614*^9, 
+  3.7008141518436327`*^9}, {3.7008142158028154`*^9, 3.7008142252249928`*^9}, {
+  3.700814275194231*^9, 3.700814289658675*^9}, {3.70081433868786*^9, 
+  3.7008146583549557`*^9}, {3.7008146986767397`*^9, 3.700814747228685*^9}, {
+  3.7008147787199354`*^9, 3.7008148628945894`*^9}, {3.700814953435902*^9, 
+  3.700814956615588*^9}},ExpressionUUID->"5e46d8ba-6b56-48f1-a1dc-\
+3fe3793748f7"],
 
 Cell[BoxData[
- PanelBox[
-  DynamicModuleBox[{$CellContext`string$$ = "ADADDDDDA"}, 
-   TagBox[GridBox[{
-      {"\<\"Simple Power Analysis\"\>"},
-      {"\<\"Letter A for addition, D for doubling\"\>"},
-      {
-       TagBox[GridBox[{
-          {"\<\"Order of operations is \"\>", 
-           InputFieldBox[Dynamic[$CellContext`string$$], String]}
-         },
-         AutoDelete->False,
-         GridBoxItemSize->{
-          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-        "Grid"]},
-      {
-       TemplateBox[{"\"k = \"",DynamicBox[
-          ToBoxes[
-           $CellContext`processOrder[$CellContext`string$$], StandardForm]]},
-        "RowDefault"]}
-     },
-     DefaultBaseStyle->"Column",
-     GridBoxAlignment->{"Columns" -> {{Center}}},
-     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-    "Column"],
-   DynamicModuleValues:>{}]]], "Output",
- CellChangeTimes->{{3.7003921688497305`*^9, 3.7003921922988296`*^9}, 
-   3.7003922544046965`*^9, {3.7003924099284334`*^9, 3.7003924322082005`*^9}, 
-   3.700392487979781*^9, 3.7003925840699015`*^9, 3.7005204657494464`*^9, {
-   3.700523282325946*^9, 3.7005233074455724`*^9}, 
-   3.700535053362322*^9},ExpressionUUID->"bb4b8e11-b37c-457e-80f7-\
-5491789faa7c"]
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[
+       Column[{
+         Style["Simple Power Analysis", FontSize -> 14, FontWeight -> Bold], 
+         Style[
+         "Press the respective button to input order of operations", 
+          FontColor -> GrayLevel[0.5]], 
+         Row[{
+           Style["Order of operations is ", FontSize -> 14], 
+           Dynamic[
+            Style[$CellContext`string, FontColor -> Blue, FontSize -> 14]]}], 
+         Dynamic[
+          $CellContext`checkString[$CellContext`string]], 
+         Row[{
+           Button[
+           "Addition", $CellContext`string = 
+            StringJoin[$CellContext`string, "A"], ImageSize -> Large], 
+           Button[
+           "Doubling", $CellContext`string = 
+            StringJoin[$CellContext`string, "D"], ImageSize -> Large], 
+           "      ", 
+           Button["Reset", $CellContext`string = "", ImageSize -> Small]}]}, 
+        Center]], Manipulate`Dump`ThisIsNotAControl}}, Typeset`size$$ = {
+    56., {1., 14.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Row[{"k = ", 
+         Style[
+          $CellContext`processOrder[$CellContext`string], FontColor -> 
+          Blue]}], "Specifications" :> {
+        Column[{
+          Style["Simple Power Analysis", FontSize -> 14, FontWeight -> Bold], 
+          Style[
+          "Press the respective button to input order of operations", 
+           FontColor -> GrayLevel[0.5]], 
+          Row[{
+            Style["Order of operations is ", FontSize -> 14], 
+            Dynamic[
+             Style[$CellContext`string, FontColor -> Blue, FontSize -> 14]]}], 
+          Dynamic[
+           $CellContext`checkString[$CellContext`string]], 
+          Row[{
+            Button[
+            "Addition", $CellContext`string = 
+             StringJoin[$CellContext`string, "A"], ImageSize -> Large], 
+            Button[
+            "Doubling", $CellContext`string = 
+             StringJoin[$CellContext`string, "D"], ImageSize -> Large], 
+            "      ", 
+            Button["Reset", $CellContext`string = "", ImageSize -> Small]}]}, 
+         Center]}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{468., {128., 137.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>(($CellContext`string = "ADA"; $CellContext`processOrder[
+         Pattern[$CellContext`s0, 
+          Blank[]]] := 
+       Module[{$CellContext`s = Characters[$CellContext`s0], $CellContext`k = 
+          0, $CellContext`powerof2 = 2}, While[$CellContext`s != {}, 
+           If[Part[$CellContext`s, 1] == "A", 
+            
+            If[$CellContext`k == 
+             0, $CellContext`k = 1; $CellContext`s = 
+              Delete[$CellContext`s, 1], 
+             Return[Infinity]], 
+            If[Length[$CellContext`s] > 1, 
+             If[
+             Part[$CellContext`s, 2] == "D", 
+              TimesBy[$CellContext`powerof2, 2]; $CellContext`s = 
+               Delete[$CellContext`s, 1], 
+              AddTo[$CellContext`k, $CellContext`powerof2]; 
+              TimesBy[$CellContext`powerof2, 2]; $CellContext`s = 
+               Delete[$CellContext`s, 1]; $CellContext`s = 
+               Delete[$CellContext`s, 1]], $CellContext`s = 
+             Delete[$CellContext`s, 
+               1]]]]; $CellContext`k]; $CellContext`checkString[
+         Pattern[$CellContext`s, 
+          Blank[]]] := Module[{}, 
+         If[
+          StringMatchQ[$CellContext`s, "*AA*"], 
+          Return[
+           Style[
+           "There cannot be 2 consequtive addition operations", FontColor -> 
+            Red, FontSize -> 8]], 
+          Return[""]]]); Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.7008137129301205`*^9, 3.700813741292961*^9}, {
+   3.700813774268158*^9, 3.7008138434259768`*^9}, 3.7008139046741357`*^9, 
+   3.700813949446252*^9, 3.7008141836369843`*^9, 3.7008142904722967`*^9, 
+   3.7008145653460217`*^9, {3.700814607624466*^9, 3.7008146216930723`*^9}, 
+   3.7008146619335613`*^9, {3.7008147009453864`*^9, 3.700814747768106*^9}, {
+   3.700814780642989*^9, 3.700814809484943*^9}, {3.700814840374657*^9, 
+   3.7008148642467012`*^9}, 
+   3.7008149572060394`*^9},ExpressionUUID->"06b32f1a-1422-4316-824f-\
+0ac4abd744e1"]
+}, Open  ]]
 }, Open  ]]
 },
 WindowSize->{872, 815},
-WindowMargins->{{251, Automatic}, {Automatic, 81}},
+WindowMargins->{{495, Automatic}, {71, Automatic}},
 Magnification:>1.5 Inherited,
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (March 13, 2017)",
 StyleDefinitions->"Default.nb"
@@ -193,20 +332,18 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[1464, 33, 2894, 68, 540, "Input", "ExpressionUUID" -> \
-"3db45f89-fa4b-440b-b9aa-a9a098d0aa21"],
-Cell[4361, 103, 135, 3, 46, "Input", "ExpressionUUID" -> \
-"2f70050e-6d9d-4ecc-a7eb-b584eca1c50f"],
 Cell[CellGroupData[{
-Cell[4521, 110, 1378, 32, 221, "Input", "ExpressionUUID" -> \
-"b977c27c-10eb-4a81-95d9-3121ccc5aa4b"],
-Cell[5902, 144, 1250, 31, 163, "Output", "ExpressionUUID" -> \
-"bb4b8e11-b37c-457e-80f7-5491789faa7c"]
+Cell[1486, 35, 178, 3, 84, "Subtitle", "ExpressionUUID" -> \
+"4d4be65d-2503-4a23-be16-6271521783d2"],
+Cell[CellGroupData[{
+Cell[1689, 42, 6865, 158, 1173, "Input", "ExpressionUUID" -> \
+"5e46d8ba-6b56-48f1-a1dc-3fe3793748f7"],
+Cell[8557, 202, 5182, 111, 290, "Output", "ExpressionUUID" -> \
+"06b32f1a-1422-4316-824f-0ac4abd744e1"]
+}, Open  ]]
 }, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)
-
-(* NotebookSignature gwDJa5l2ddNnlCKPwBcYWvQg *)
+(* NotebookSignature DuTvaVLRJFAkuAwz@AYqwJfE *)
