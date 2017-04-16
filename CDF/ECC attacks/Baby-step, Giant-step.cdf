@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1064,         20]
-NotebookDataLength[     40784,        986]
-NotebookOptionsPosition[     40933,        971]
-NotebookOutlinePosition[     41451,        992]
-CellTagsIndexPosition[     41408,        989]
+NotebookDataLength[     40815,        987]
+NotebookOptionsPosition[     40949,        971]
+NotebookOutlinePosition[     41466,        992]
+CellTagsIndexPosition[     41423,        989]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -56,7 +56,7 @@ Cell[BoxData[
                 RowBox[{"x1", ",", "y1"}], "}"}], ",", 
                RowBox[{"{", 
                 RowBox[{"x2", ",", "y2"}], "}"}], ",", "a", ",", "b", ",", 
-               "p"}], "]"}], "\[LeftDoubleBracket]", "2", 
+               "p"}], "]"}], "\[LeftDoubleBracket]", "1", 
              "\[RightDoubleBracket]"}], ",", 
             RowBox[{"FontColor", "\[Rule]", "Blue"}]}], "]"}]}], "}"}], "]"}],
         ",", 
@@ -72,7 +72,7 @@ Cell[BoxData[
                 RowBox[{"x1", ",", "y1"}], "}"}], ",", 
                RowBox[{"{", 
                 RowBox[{"x2", ",", "y2"}], "}"}], ",", "a", ",", "b", ",", 
-               "p"}], "]"}], "\[LeftDoubleBracket]", "1", 
+               "p"}], "]"}], "\[LeftDoubleBracket]", "2", 
              "\[RightDoubleBracket]"}], ",", 
             RowBox[{"FontColor", "\[Rule]", "Blue"}]}], "]"}]}], "}"}], 
         "]"}]}], "}"}], ",", "Center"}], "]"}], ",", 
@@ -646,8 +646,8 @@ FontWeight->\"Plain\"]\)\>\"", ",", "\"\<\>\"", ",", "\[IndentingNewLine]",
               "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
           RowBox[{
            RowBox[{"Length", "[", "points", "]"}], "+", "1"}]}]}], 
-        "\[IndentingNewLine]", "]"}]}]}], ")"}]}]}], "]"}]], "Input",Expressio\
-nUUID->"3ad84b48-d91e-4fc4-9748-4ee8a230fe2b"],
+        "\[IndentingNewLine]", "]"}]}]}], ")"}]}]}], "]"}]], "Input",
+ CellOpen->False,ExpressionUUID->"3ad84b48-d91e-4fc4-9748-4ee8a230fe2b"],
 
 Cell[BoxData[
  TagBox[
@@ -696,7 +696,7 @@ $CellContext`a$$, $CellContext`b$$, $CellContext`p$$]],
          Dynamic[
           $CellContext`checkAB[$CellContext`a$$, $CellContext`b$$, \
 $CellContext`p$$]]}, Center]], Manipulate`Dump`ThisIsNotAControl}}, 
-    Typeset`size$$ = {232., {17.5, 26.5}}, Typeset`update$$ = 0, 
+    Typeset`size$$ = {221., {17.5, 26.5}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      2, StandardForm, 
@@ -714,13 +714,13 @@ $CellContext`p$$]]}, Center]], Manipulate`Dump`ThisIsNotAControl}},
             Part[
              $CellContext`BSGS[{$CellContext`x1$$, $CellContext`y1$$}, \
 {$CellContext`x2$$, $CellContext`y2$$}, $CellContext`a$$, $CellContext`b$$, \
-$CellContext`p$$], 2], FontColor -> Blue]}], 
+$CellContext`p$$], 1], FontColor -> Blue]}], 
          Row[{"Number of steps = ", 
            Style[
             Part[
              $CellContext`BSGS[{$CellContext`x1$$, $CellContext`y1$$}, \
 {$CellContext`x2$$, $CellContext`y2$$}, $CellContext`a$$, $CellContext`b$$, \
-$CellContext`p$$], 1], FontColor -> Blue]}]}, Center], 
+$CellContext`p$$], 2], FontColor -> Blue]}]}, Center], 
       "Specifications" :> {{{$CellContext`x1$$, 200, "x="}, FieldSize -> Tiny,
           ControlPlacement -> 1}, {{$CellContext`y1$$, 39, "y="}, FieldSize -> 
          Tiny, ControlPlacement -> 2}, {{$CellContext`x2$$, 4, "x="}, 
@@ -964,13 +964,13 @@ $CellContext`y}]]]]; Length[$CellContext`points] + 1]);
     UntrackedVariables:>{Typeset`size$$}], "Manipulate",
    Deployed->True,
    StripOnInput->False],
-  Manipulate`InterpretManipulate[1]]], "Output",ExpressionUUID->"709f19c1-\
-0db7-4fc8-b2ac-8362155b2461"]
+  Manipulate`InterpretManipulate[1]]], "Output",ExpressionUUID->"5f4f0fcd-\
+c96c-4207-bf80-040b1eb5a980"]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{1012, 824},
-WindowMargins->{{-50, Automatic}, {64, Automatic}},
+WindowMargins->{{92, Automatic}, {48, Automatic}},
 Visible->True,
 ScrollingOptions->{"VerticalScrollRange"->Fit},
 ShowCellBracket->Automatic,
@@ -995,14 +995,15 @@ Cell[CellGroupData[{
 Cell[1486, 35, 103, 0, 84, "Subtitle", "ExpressionUUID" -> \
 "4bec2e27-03ad-4672-8f89-abbebb18a082"],
 Cell[CellGroupData[{
-Cell[1614, 39, 24555, 610, 3418, "Input", "ExpressionUUID" -> \
-"3ad84b48-d91e-4fc4-9748-4ee8a230fe2b"],
-Cell[26172, 651, 14733, 316, 496, "Output", "ExpressionUUID" -> \
-"709f19c1-0db7-4fc8-b2ac-8362155b2461"]
+Cell[1614, 39, 24571, 610, 28, "Input", "ExpressionUUID" -> \
+"3ad84b48-d91e-4fc4-9748-4ee8a230fe2b",
+ CellOpen->False],
+Cell[26188, 651, 14733, 316, 496, "Output", "ExpressionUUID" -> \
+"5f4f0fcd-c96c-4207-bf80-040b1eb5a980"]
 }, Open  ]]
 }, Open  ]]
 }
 ]
 *)
 
-(* NotebookSignature vx0kO9gKaj0tsAwQHO76ldfm *)
+(* NotebookSignature 4uTWOYvGqq@MDCKkkke#s07D *)
